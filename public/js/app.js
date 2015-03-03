@@ -15,5 +15,6 @@ angular.module('groupProject', ['ngRoute'])
 			}
 		})
 		.otherwise({
-			redirectTo: '/'});
+			redirectTo: '/'
+		});
 });
