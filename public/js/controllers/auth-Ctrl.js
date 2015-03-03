@@ -3,7 +3,7 @@ angular.module('groupProject')
 	$scope.state = 'login';
 	$scope.clickLogin = function() {
 		AuthService.login($scope.email, $scope.password).then(function() {
-			$location.path('/todos');
+			$location.path('/home');
 		}).catch(function(err) {
 			$scope.loginError = true;
 		});
