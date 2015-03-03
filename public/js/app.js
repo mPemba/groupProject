@@ -14,6 +14,9 @@ angular.module('groupProject', ['ngRoute'])
 				}
 			}
 		})
+		.when('/home', {
+			templateUrl: 'views/home-view.html',
+		})
 		.otherwise({
 			redirectTo: '/'});
 });
