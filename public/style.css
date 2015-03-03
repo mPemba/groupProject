@@ -10,6 +10,12 @@ body {
   font-family: 'Pathway Gothic One', sans-serif;
 }
 
+.subtitle{
+  font-size: 15px;
+  font-family: 'Pathway Gothic One', sans-serif;
+  margin-bottom: 80px;
+}
+
 .register{
   text-decoration: underline;
 }
