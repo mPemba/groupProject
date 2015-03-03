@@ -5,7 +5,7 @@ angular.module('groupProject', ['ngRoute'])
 			templateUrl: 'views/login-view.html',
 			controller: 'authCtrl'
 		 })
-		.when('home', {
+		.when('/home', {
 			templateUrl: 'views/home.html',
 			controller: 'homeCtrl'
 		})

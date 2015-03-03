@@ -1,0 +1,19 @@
+body {
+  background-color: #494A49;
+  color: white;
+  text-align: center;
+}
+
+.title{
+  font-size: 100px;
+  margin-top: 80px;
+  font-family: 'Pathway Gothic One', sans-serif;
+}
+
+.register{
+  text-decoration: underline;
+}
+
+.login{
+  text-decoration: underline;
+}
