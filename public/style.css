@@ -5,7 +5,7 @@ body {
 }
 
 .title{
-  font-size: 100px;
+  font-size: 150px;
   margin-top: 80px;
   font-family: 'Pathway Gothic One', sans-serif;
 }
@@ -22,4 +22,17 @@ body {
 
 .login{
   text-decoration: underline;
+}
+
+
+
+
+.restName{
+  font-size: 70px;
+  font-family: 'Syncopate', sans-serif;
+  text-align: left;
+}
+
+.image{
+  border: 10px solid white;
 }
