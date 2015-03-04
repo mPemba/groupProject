@@ -1,9 +1,28 @@
 
             <h1>MY PROFILE:</h1>
 
-<div>
-    <input type="email" value="email login required..." ng-model="email" />
-    <input type="password" value="password required..." ng-model="password" />
-</div>
+<div class="row">
+	<strong>Email</strong>
+    <input type="email" ng-model="email" /><br>
+    <strong>Password</strong>
+    <input type="password" ng-model="password" /><br>
+    <strong>Business</strong>
+    <input type="text" ng-model="businessName" /><br>
+    <strong>Business Address</strong>
+    <input type="text" ng-model="businessAddress" /><br>
+    <strong>City</strong>
+    <input type="text" ng-model="city" /><br>
+    <strong>State</strong>
+    <input type="text" ng-model="state" /><br>
+    <strong>Zip</strong>
+    <input type="text" ng-model="zip" /><br>
+    <strong>Votes</strong>
+    <input type="text" ng-model="vote" /><br>
 
-<button>Save</button>
+    <div class="vote">
+	    <div class="arrow-up" ng-click="upVote()"><br>{{vote}}<br></div>
+	    <br>
+	    <div class="arrow-down" ng-click="downVote()"></div>
+		</div>
+	<button>Save</button>
+</div>
