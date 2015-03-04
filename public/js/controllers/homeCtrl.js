@@ -10,7 +10,7 @@ app.controller('homeCtrl', function($scope, mapsService) {
 	// 	})
 	// }
 
-
+	
 	mapsService.init();
 
 })

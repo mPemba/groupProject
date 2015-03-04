@@ -12,7 +12,13 @@ angular.module('groupProject')
 	};
 	this.postProfile = function(
 			email,
-			password
+			password,
+			businessName,
+			businessAddress,
+			city,
+			state,
+			zip,
+			vote
 		){
 		var dfd = $q.defer();
 		$http({
@@ -20,12 +26,17 @@ angular.module('groupProject')
 			url: '/api/postProfile',
 			data: {
 				email: email,
-				password: password
+				password: password,
+				businessName: businessName,
+				businessAddress: businessAddress,
+				city: city,
+				state: state,
+				zip: zip,
+				vote: vote
 			}
-		}).then(function(response) {
-			dfd.resolve(response.data);
-			$location.path('/nav').replace();
-		}).catch(function(err){
+		}).success(function(response){
+            dfd.resolve(response);
+        }).catch(function(err){
             dfd.reject(err);
         });
         return dfd.promise;

@@ -1,9 +1,9 @@
-var BusinessModel = require('../models/businessModel');
+var businessModel = require('../models/businessModel');
 var q = require('q');
 
 module.exports.save = function(business){
 	var dfd = q.defer();
-	BusinessModel(business).save(function(err, res){
+	businessModel(business).save(function(err, res){
 		if(!err) {
 			dfd.resolve(res);
 		}else {
@@ -14,7 +14,7 @@ module.exports.save = function(business){
 };
 module.exports.find = function(query){
 	var dfd = q.defer();
-	BusinessModel.find(query, function(err, results){
+	businessModel.find(query, function(err, results){
 		if(!err){
 			dfd.resolve(results)
 		}else {

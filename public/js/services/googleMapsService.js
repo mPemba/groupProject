@@ -1,4 +1,4 @@
-var app = angular.module('groupProject');
+var app = angular.module('groupProject')
 
 app.service('mapsService', function($window, $q, $http){
 	var map;
