@@ -1,3 +1,4 @@
+
 var app = angular.module('groupProject');
 
 app.controller('homeCtrl', function($scope, mapsService) {
@@ -9,7 +10,7 @@ app.controller('homeCtrl', function($scope, mapsService) {
 	// 	})
 	// }
 
-
+	
 	mapsService.init();
 
 })
