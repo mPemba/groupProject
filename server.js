@@ -12,6 +12,7 @@ mongoose.connect('mongodb://localhost/groupProject');
 var User = require('./api/models/profileModel');
 var AuthCtrl = require('./api/controllers/authCtrl');
 var ProfileCtrl = require('./api/controllers/profileCtrl');
+var BusinessCtrl = require('./api/controllers/businessCtrl');
 
 // Middleware =========================
 passport.use(new localStrategy({
@@ -82,5 +83,8 @@ app.get('/api/auth', AuthCtrl.profile);
 
 app.get('/api/getProfile', ProfileCtrl.get);
 app.post('/api/postProfile', ProfileCtrl.post);
+
+app.get('/api/getBusiness', BusinessCtrl.get);
+app.post('/api/postBusiness', BusinessCtrl.post);
 
 app.listen(8000);

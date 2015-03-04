@@ -3,3 +3,12 @@ api/register: example
 	"email": "rick.wigtman1@gmail.com",
 	"password": "howdy"
 }
+/api/postBusiness: example
+{
+	"businessName": "harry's bar and gril",
+	"businessAddress": "ou812",
+	  "city": "bummer",
+	  "state": "infancy",
+	  "zip": "12345",
+	"votes": 5
+}
