@@ -2,12 +2,12 @@ var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
 var q = require('q');
 
-var ProfileSchema = mongoose.Schema({
+var schema = mongoose.Schema({
 	email: {type: String, required: true, unique: true},
 	password: {type: String, required: true}
 });
 
-ProfileSchema.pre('save', function(next){
+schema.pre('save', function(next){
 	var user = this;
 	if (!user.isModified('password')) {
 		return next();
@@ -23,7 +23,7 @@ ProfileSchema.pre('save', function(next){
 		});
 	}); 
 });
-ProfileSchema.methods.comparePassword = function(pass){
+schema.methods.comparePassword = function(pass){
 	var dfd = q.defer();
 	bcrypt.compare(pass, this.password, function(err, isMatch){
 		if(err) {
@@ -36,4 +36,4 @@ ProfileSchema.methods.comparePassword = function(pass){
 	return dfd.promise;
 };
 
-module.exports = mongoose.model('Profile', ProfileSchema);
+module.exports = mongoose.model('Profile', schema);

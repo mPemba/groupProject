@@ -24,9 +24,6 @@ body {
   text-decoration: underline;
 }
 
-
-
-
 .restName{
   font-size: 70px;
   font-family: 'Syncopate', sans-serif;
@@ -37,26 +34,23 @@ body {
   border: 10px solid white;
 }
 
+.arrow-up {
+  width: 0; 
+  height: 0; 
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  
+  border-bottom: 20px solid #008000;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.arrow-down {
+  width: 0; 
+  height: 0; 
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  
+  border-top: 20px solid #FF0000;
+}
 
 
 .ng-modal-overlay {
