@@ -1,12 +1,16 @@
 var mongoose = require('mongoose');
+var Customer = require('./../models/profileModel');
+var Schema = mongoose.Schema
 
-var schema = mongoose.Schema({
+var businessSchema = Schema({
+	email: [{ type: Schema.Types.ObjectId, ref: 'Profile' }],
+	//password: [{ type: Schema.Types.ObjectId, ref: 'Profile' }],
 	businessName: String,
 	businessAddress: String,
 	  city: String,
 	  state: String,
 	  zip: String,
-	upvotes: {type: Number, default: 0},
+	upvotes: Number
 })
 
-module.exports = mongoose.model('Business', schema);
+module.exports = mongoose.model('Business', businessSchema);
