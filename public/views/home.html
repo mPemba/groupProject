@@ -1,10 +1,10 @@
 <div id="map"></div>
 
-<div class="main-results-container" ng-model="mainResult" ng-repeat="key in newDataArr | limitTo: 1">
+<div class="main-results-container" ng-model="mainResult">
   <ul>
-    <li>{{key.name}}</li>
-    <li><img ng-src="{{key.photos[0].getUrl({'maxWidth': 500, 'maxHeight': 500})}}"/></li>
-    <li>{{key.vicinity}}</li>
+    <li>{{newObjVar.name}}</li>
+    <li><img ng-src="{{newObjVar.photos[0].getUrl({'maxWidth': 500, 'maxHeight': 500})}}"/></li>
+    <li>{{newObjVar.vicinity}}</li>
   </ul>
   <button ng-click="nextPlace()">Submit</button>
 </div>
