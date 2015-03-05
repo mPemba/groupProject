@@ -29,7 +29,7 @@
 }
 
 
-
+/*login*/
 
 body {
   background-color: #494A49;
@@ -81,13 +81,22 @@ body {
 }
 
 .x{
-  margin-right: 60px;
+  margin-top: 20px;
+  margin-right: 150px;
   height: 4%;
   width: 4%;
 }
 
+.rating{
+  position: absolute;
+  right: 100px;
+  left: 100px;
+  z-index: -1;
+}
+
 .plus{
-  margin-right: 60px;
+  margin-top: 10px;
+  margin-left: 150px;
   height: 4%;
   width: 4%;
 }
@@ -101,7 +110,7 @@ body {
 
 }
 
-.arrow-up {
+/*.arrow-up {
   width: 0;
   height: 0;
   border-left: 20px solid transparent;
@@ -117,7 +126,7 @@ body {
   border-right: 20px solid transparent;
 
   border-top: 20px solid #FF0000;
-}
+}*/
 
 
 
@@ -147,13 +156,29 @@ body {
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
 
-  background-color: #fff;
+  background-color: #B8B8B7;
   box-shadow: 4px 4px 80px #000;
+  border-radius: 25px;
 }
+
+.modal-name{
+  text-align: left;
+  color: #B90006;
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 25px;
+}
+
+.modal-rating{
+  position: absolute;
+  right: 30px;
+  top: 23px;
+}
+
+
 .ng-modal-dialog-content {
   color: black;
-  padding:10px;
-  text-align: left;
+  padding:5px;
+  text-align: center;
 }
 
 .ng-modal-close {
@@ -175,4 +200,6 @@ body {
   width: 200px;
   border: 1px solid silver;
   border-radius: 5px;
+  margin-right: auto;
+  margin-left: auto;
 }
