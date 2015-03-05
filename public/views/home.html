@@ -1,17 +1,34 @@
 <div id="map"></div>
 
-<div class="main-results-container" ng-model="mainResult">
-  <ul>
-    <li>{{newObjVar.name}}</li>
-    <li><img ng-src="{{newObjVar.photos[0].getUrl({'maxWidth': 500, 'maxHeight': 500})}}"/></li>
-    <li>{{newObjVar.vicinity}}</li>
-  </ul>
-  <button ng-click="nextPlace()">Submit</button>
+<div class='nav-bar'>
+  <img src='http://www.logogarden.com/user_images/logo_1474158_fp3i9ed3_web.png' class='logo'/>
+  <a class='profile-link' href='http://www.google.com'> Profile <img src='https://cdn2.iconfinder.com/data/icons/fatcow/16x16/bullet_arrow_right.png' class='profile-icon'/></a>
 </div>
-<div ng-controller="homeCtrl">
+
+<div class="main-results-container" ng-model="mainResult">
+  <div class='rest-obj'>
+    <div class='obj-name'>{{newObjVar.name}}</div>
+    <div class='obj-pic'>
+      <img ng-src="{{newObjVar.photos[0].getUrl({'maxWidth': 500, 'maxHeight': 500})}}"/>
+    </div>
+    <div ng-controller='homeCtrl'>
+      <img ng-click='nextPlace()' src='https://cdn0.iconfinder.com/data/icons/super-mono-reflection/red/button-cross_red.png' class='x' class='submit'/>
+      <!-- <img src='https://cdn0.iconfinder.com/data/icons/super-mono-reflection/green/button-add_green.png' class='plus'/> -->
+      <img ng-click='toggleModal()' src='https://cdn0.iconfinder.com/data/icons/super-mono-reflection/green/button-check_green.png' class='check'/>
+      <modal-dialog show='modalShown' width='500px' height='80%'>
+        <div class="modal-container">
+          <p> test test </p>
+    <!-- </div>
+    <div class='obj-loc'>{{newObjVar.vicinity}}</div> -->
+    </div>
+  </div>
+  <button class='submit' ng-click="nextPlace()">Submit</button>
+</div>
+<!-- <div ng-controller="homeCtrl">
 <button ng-click='toggleModal()'>Open Modal Dialog</button>
-<modal-dialog show='modalShown' width='750px' height='60%'>
+<modal-dialog show='modalShown' width='500px' height='80%'>
   <div class="modal-container">
     <p> test test </p>
-  </div>
-</modal-dialog></div>
+  </div> -->
+<!-- </modal-dialog></div> -->
+</div>
