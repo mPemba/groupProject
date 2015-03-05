@@ -8,10 +8,17 @@
   </ul>
   <button ng-click="nextPlace()">Submit</button>
 </div>
-<div ng-controller="homeCtrl">
+
+<div>
 <button ng-click='toggleModal()'>Open Modal Dialog</button>
 <modal-dialog show='modalShown' width='750px' height='60%'>
-  <div class="modal-container">
-    <p> test test </p>
+  <div style="color: black" class="modal-container">
+    <h3>{{newObjVar.name}}</h3>
+    <p>{{newObjVar.vicinity}}</p>
+    <p>Open now: {{newObjVar.opening_hours.open_now}}</p>
+    <p>{{newObjVar.opening_hours.weekday_text}}</p>
+    <p>{{newObjVar.rating}}</p>
+    <div id="map"></div>
+    <div id="map-canvas"></div>
   </div>
 </modal-dialog></div>
