@@ -17,13 +17,15 @@ app.service('mapsService', function($window, $q, $http){
 
 	  	map = new google.maps.Map(document.getElementById('map'), {
 	      center: location,
-	      zoom: 15
+	      zoom: 15,
+	      mapTypeId: google.maps.MapTypeId.SATELLITE,
+	      disableDefaultUI: true
 	    });
 
 	    var request = {
 	    	location: location,
 	    	radius: '1000',
-	    	types: ['food']
+	    	types: ['food', 'restaurant']
 	    }
 
 	    service = new google.maps.places.PlacesService(map);
