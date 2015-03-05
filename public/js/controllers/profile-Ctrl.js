@@ -15,7 +15,7 @@ angular.module('groupProject')
 	 		$scope.city,
 	 		$scope.state,
 	 		$scope.zip,
-	 		$scope.votes,
+	 		$scope.vote,
 	 		$scope.comments
  		)
  			$scope.businessName = '';
@@ -43,7 +43,7 @@ angular.module('groupProject')
 	 		$scope.city,
 	 		$scope.state,
 	 		$scope.zip,
-	 		$scope.votes,
+	 		$scope.vote,
 	 		$scope.comments
  		)
  			$scope.businessName = '';
@@ -51,7 +51,7 @@ angular.module('groupProject')
 	 		$scope.city = '';
 	 		$scope.state = '';
 	 		$scope.zip = '';
-	 		$scope.votes = '';
+	 		$scope.vote = '';
 	 		$scope.comments = '';
  	};
 	$scope.upVote = function () {
