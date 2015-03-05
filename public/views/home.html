@@ -1,4 +1,4 @@
-<div id="map"></div>
+<!-- <div id="map"></div> -->
 
 <div class='nav-bar'>
   <img src='http://www.logogarden.com/user_images/logo_1474158_fp3i9ed3_web.png' class='logo'/>
@@ -15,20 +15,19 @@
       <img ng-click='nextPlace()' src='https://cdn0.iconfinder.com/data/icons/super-mono-reflection/red/button-cross_red.png' class='x' class='submit'/>
       <!-- <img src='https://cdn0.iconfinder.com/data/icons/super-mono-reflection/green/button-add_green.png' class='plus'/> -->
       <img ng-click='toggleModal()' src='https://cdn0.iconfinder.com/data/icons/super-mono-reflection/green/button-check_green.png' class='check'/>
-      <modal-dialog show='modalShown' width='500px' height='80%'>
-        <div class="modal-container">
-          <p> test test </p>
+      <modal-dialog show='modalShown' width='750px' height='80%'>
+        <div style='color: black' class="modal-container">
+          <h3>{{newObjVar.name}}</h3>
+          <p>{{newObjVar.vicinity}}</p>
+          <p>Open now: {{newObjVar.opening_hours.open_now}}</p>
+          <p>{{newObjVar.opening_hours.weekday_text}}</p>
+          <p>{{newObjVar.rating}}</p>
+          <div id="map"></div>
+          <div id="map-canvas"></div>
     <!-- </div>
     <div class='obj-loc'>{{newObjVar.vicinity}}</div> -->
     </div>
+  </modal-dialog>
   </div>
   <button class='submit' ng-click="nextPlace()">Submit</button>
-</div>
-<!-- <div ng-controller="homeCtrl">
-<button ng-click='toggleModal()'>Open Modal Dialog</button>
-<modal-dialog show='modalShown' width='500px' height='80%'>
-  <div class="modal-container">
-    <p> test test </p>
-  </div> -->
-<!-- </modal-dialog></div> -->
 </div>
