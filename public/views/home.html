@@ -1,11 +1,13 @@
 <div id="map"></div>
 
 <div class="main-results-container" ng-model="mainResult">
-  <ul>
-    <li>{{newObjVar.name}}</li>
-    <li><img ng-src="{{newObjVar.photos[0].getUrl({'maxWidth': 500, 'maxHeight': 500})}}"/></li>
-    <li>{{newObjVar.vicinity}}</li>
-  </ul>
+  <div class='rest-obj'>
+    <div class='obj-name'>{{newObjVar.name}}</div>
+    <div class='obj-pic'>
+      <img ng-src="{{newObjVar.photos[0].getUrl({'maxWidth': 500, 'maxHeight': 500})}}"/>
+    </div>
+    <div class='obj-loc'>{{newObjVar.vicinity}}</div>
+  </div>
   <button ng-click="nextPlace()">Submit</button>
 </div>
 <div ng-controller="homeCtrl">

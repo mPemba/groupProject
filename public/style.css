@@ -24,34 +24,55 @@ body {
   text-decoration: underline;
 }
 
-.restName{
-  font-size: 70px;
+
+/*home view*/
+
+.obj-name{
+  color: #701519;
+  font-size: 50px;
   font-family: 'Syncopate', sans-serif;
   text-align: left;
 }
 
-.image{
-  border: 10px solid white;
+.obj-pic{
+  margin-left: auto;
+  margin-right: auto;
+  width: 418px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.obj-pic img {
+  width: 100%;
+
+}
+
+.obj-loc{
+
 }
 
 .arrow-up {
-  width: 0; 
-  height: 0; 
+  width: 0;
+  height: 0;
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
-  
+
   border-bottom: 20px solid #008000;
 }
 
 .arrow-down {
-  width: 0; 
-  height: 0; 
+  width: 0;
+  height: 0;
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
-  
+
   border-top: 20px solid #FF0000;
 }
 
+
+
+
+/*modal*/
 
 .ng-modal-overlay {
   /* A dark translucent div that covers the whole screen */
