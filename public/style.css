@@ -33,20 +33,40 @@
 
 body {
   background-color: #494A49;
-  color: white;
-  text-align: center;
 }
 
+/*.title-container{
+  background-color: #494A49;
+  height: 300px;
+}*/
+
 .title{
+  text-align: center;
+  color: white;
   font-size: 150px;
   margin-top: 80px;
   font-family: 'Pathway Gothic One', sans-serif;
 }
 
 .subtitle{
+  text-align: center;
+  color: white;
   font-size: 15px;
   font-family: 'Pathway Gothic One', sans-serif;
   margin-bottom: 80px;
+}
+
+.login-image{
+  height: 100%;
+  width: 100%;
+}
+
+.login-auth{
+  color: white;
+  position: absolute;
+  top: 700px;
+  left: 190px;
+  z-index: 10;
 }
 
 .register{
@@ -83,23 +103,26 @@ body {
 .x{
   margin-top: 20px;
   margin-right: 150px;
+  margin-left: 500px;
   height: 4%;
   width: 4%;
 }
 
 .rating{
   position: absolute;
+  margin-left: 506px;
   right: 100px;
   left: 100px;
   z-index: -1;
 }
 
-.plus{
+/*.plus{
+  text-align: center;
   margin-top: 10px;
   margin-left: 150px;
   height: 4%;
   width: 4%;
-}
+}*/
 
 .check{
   height: 4%;

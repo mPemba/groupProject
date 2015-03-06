@@ -1,12 +1,17 @@
 
-
+<div class='title-container'>
 	<div class='title'><strong>RESTORE</strong></div>
 	<div class='subtitle'>Restaurant Finder</div>
+</div>
+
+<div class='login-container'>
+	<img src='https://ununsplash.imgix.net/reserve/EnF7DhHROS8OMEp2pCkx_Dufer%20food%20overhead%20hig%20res.jpg?dpr=2&fit=crop&fm=jpg&h=700&q=75&w=1050' class='login-image'/>
+
+	<div class='login-auth'>
 	<div><strong>Email:</strong></div>
 	<div><input type="text" ng-model="email" /></div>
 	<div><strong>Password:</strong></div>
 	<div><input type="password" ng-model="password" /></div>
-
 	<div ng-if="state == 'register'">
 		<button ng-click="clickRegister()">Register</button>
 		<div>Need to <a ng-click=changeState('login') class='login'>login instead?</a></div>
@@ -15,6 +20,7 @@
 		<button ng-click="clickLogin()">Login</button>
 		<div>Need to <a ng-click="changeState('register')" class='register'>register instead?</a></div>
 	</div>
+</div>
 	<!-- <div ng-if="loginError">
 		Login failed.
 	</div>
