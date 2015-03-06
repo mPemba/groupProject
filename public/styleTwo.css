@@ -1,0 +1,52 @@
+.login-email-label {
+	font-family: "Didot";
+	text-rendering: optimize-legibility;
+	font-kerning: normal;
+	letter-spacing: 2px;
+	font-variant: small-caps;
+}
+.login-email-input {
+	border: 2px solid #fff;
+	background: none;
+	height: 25px;
+	width: 150px;
+	font-family: sans-serif;
+	font-size: 1rem;
+	color: #fff;
+	text-align: center;
+}
+.login-email-input:hover {
+	background: url(http://www.foodsafetymagazine.com/fsm/cache/file/25BB44A2-A8D1-47B5-BB5849218F6D6E9F.jpg);
+	background-position: left;
+	color: black;
+	text-shadow: 1px 3px white;
+	font-weight: bold;
+}
+.login-password-label {
+	font-family: "Didot";
+	text-rendering: optimize-legibility;
+	font-kerning: normal;
+	letter-spacing: 2px;
+	font-variant: small-caps;
+}
+.login-password-input {
+	border: 2px solid #fff;
+	background: none;
+	height: 25px;
+	width: 150px;
+	font-family: sans-serif;
+	font-size: 1rem;
+	color: #fff;
+	text-align: center;
+}
+.login-btn {
+	margin-top: 10px;
+	border: 2px solid #fff;
+	background: none;
+	height: 28px;
+	width: 158px;
+	font-family: sans-serif;
+	font-size: 1rem;
+	color: #fff;
+	text-align: center;
+}

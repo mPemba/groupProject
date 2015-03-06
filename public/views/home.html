@@ -1,4 +1,4 @@
-<div id="map"></div>
+<!-- <div id="map"></div> -->
 
 <div class='nav-bar'>
   <img src='http://www.logogarden.com/user_images/logo_1474158_fp3i9ed3_web.png' class='logo'/>
@@ -11,24 +11,29 @@
     <div class='obj-pic'>
       <img ng-src="{{newObjVar.photos[0].getUrl({'maxWidth': 500, 'maxHeight': 500})}}"/>
     </div>
-    <div ng-controller='homeCtrl'>
-      <img ng-click='nextPlace()' src='https://cdn0.iconfinder.com/data/icons/super-mono-reflection/red/button-cross_red.png' class='x' class='submit'/>
+    <div>
+      <p class='rating'> Rating: {{newObjVar.rating}} </p>
+      <img ng-click='nextPlace()' src='https://cdn0.iconfinder.com/data/icons/super-mono-reflection/red/button-cross_red.png' class='x'/>
       <!-- <img src='https://cdn0.iconfinder.com/data/icons/super-mono-reflection/green/button-add_green.png' class='plus'/> -->
       <img ng-click='toggleModal()' src='https://cdn0.iconfinder.com/data/icons/super-mono-reflection/green/button-check_green.png' class='check'/>
-      <modal-dialog show='modalShown' width='500px' height='80%'>
+      <modal-dialog show='modalShown' width='500px' height='60%'>
         <div class="modal-container">
-          <p> test test </p>
+          <h3 class='modal-name'>{{newObjVar.name}}</h3>
+          <p class='modal-rating'>Rating: {{newObjVar.rating}}</p>
+          <p class='modal-loc'>{{newObjVar.vicinity}}</p>
+          <p class='modal-open'>Open now: {{newObjVar.opening_hours.open_now}}</p>
+          <p class='modal-hours'>{{newObjVar.opening_hours.weekday_text}}</p>
+          <p class+'modal-phoneNumber'>{{phoneNumber}}</p>
+          <li ng-repeat="pictures in morePhotos"> 
+            <img ng-src="{{pictures.getUrl({'maxWidth': 500, 'maxHeight': 500})}}">
+            
+          </li>
+
+          <div id="map"></div>
+          <div id="map-canvas"></div>
     <!-- </div>
     <div class='obj-loc'>{{newObjVar.vicinity}}</div> -->
     </div>
+  </modal-dialog>
   </div>
-  <button class='submit' ng-click="nextPlace()">Submit</button>
-</div>
-<!-- <div ng-controller="homeCtrl">
-<button ng-click='toggleModal()'>Open Modal Dialog</button>
-<modal-dialog show='modalShown' width='500px' height='80%'>
-  <div class="modal-container">
-    <p> test test </p>
-  </div> -->
-<!-- </modal-dialog></div> -->
 </div>

@@ -5,6 +5,7 @@ app.controller('homeCtrl', function($scope, mapsService) {
 
 	$scope.modalShown = false;
     $scope.toggleModal = function() {
+    	$scope.getAllMapDetails();
     $scope.modalShown = !$scope.modalShown;
   };
 	$scope.test = "home page test test";
@@ -28,9 +29,9 @@ app.controller('homeCtrl', function($scope, mapsService) {
 			$scope.newDataArr = res;
 			
 			var photo = res.photos;
-			console.log(photo)
+			//console.log(photo)
 		    //$scope.newPhoto = res[0].photos[0].getUrl({'maxWidth': 500, 'maxHeight': 500});
-		    console.log($scope.newPhoto)
+		    //console.log($scope.newPhoto)
 			// if (photo) {
 			// 	//$scope.newPhoto = photo.getUrl({'maxWidth': 500, 'maxHeight': 500}); 
 			// }
@@ -41,14 +42,24 @@ app.controller('homeCtrl', function($scope, mapsService) {
 	}
 	newData();
 	var counter = 0;
+
+	$scope.getAllMapDetails = function(){
+		console.log(counter)
+		mapsService.getAllDetails(counter).then(function(res){
+			$scope.phoneNumber = res.formatted_phone_number;
+			$scope.morePhotos = res.photos;
+			
+		});
+		
+	}
 	
 	$scope.nextPlace = function(){
-		console.log(counter)
 		$scope.newObjVar = $scope.newDataArr[counter];
 		counter = counter + 1;
 		
 
 
+
 	}
 
-})
+});

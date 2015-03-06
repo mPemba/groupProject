@@ -1,6 +1,7 @@
 var app = angular.module('groupProject');
 
 app.directive('modalDialog', function() {
+
   return {
     restrict: 'E',
     scope: {
