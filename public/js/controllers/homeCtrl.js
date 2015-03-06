@@ -49,7 +49,7 @@ app.controller('homeCtrl', function($scope, mapsService) {
 			$scope.phoneNumber = res.formatted_phone_number;
 			$scope.morePhotos = res.photos;
 			
-		})
+		});
 		
 	}
 	
@@ -59,6 +59,7 @@ app.controller('homeCtrl', function($scope, mapsService) {
 		
 
 
+
 	}
 
-})
+});
