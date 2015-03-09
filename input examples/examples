@@ -10,5 +10,15 @@ api/register: example
 	  "city": "bummer",
 	  "state": "infancy",
 	  "zip": "12345",
-	"votes": 5
+	"rating": 5
+}
+
+{
+	"businessName": "harry's bar and gril",
+	"businessAddress": "ou812",
+	  "city": "bummer",
+	  "state": "infancy",
+	  "zip": "12345",
+	"rating": 5,
+	"comments": "great food lousy atmospher"
 }

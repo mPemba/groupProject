@@ -3,6 +3,7 @@ var q = require('q');
 
 module.exports.save = function(business){
 	var dfd = q.defer();
+	console.log(business)
 	businessModel(business).save(function(err, res){
 		if(!err) {
 			dfd.resolve(res);

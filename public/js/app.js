@@ -14,7 +14,7 @@ angular.module('groupProject', ['ngRoute'])
 			controller: 'profileCtrl',
 			resolve: {
 			profile: function(profileService) {
-				return profileService.getProfile();
+				return profileService.getBusiness();
 				}
 			}
 		})

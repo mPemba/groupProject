@@ -1,87 +1,36 @@
 angular.module('groupProject')
-.service('profileService', function($q, $http, $location) {
-	this.getProfile = function() {
+.service('profileService', function($q, $http, $location){
+ 	this.getBusiness = function(){
 		var dfd = $q.defer();
 		$http({
 			method: 'GET',
-			url: '/api/getProfile'
-		}).then(function(response) {
-			dfd.resolve(response.data);
-		});
-		return dfd.promise;
-	};
-	this.postProfile = function(email, password){
-		var dfd = $q.defer();
-		$http({
-			method: 'POST',
-			url: '/api/postProfile',
-			data: {
-				email: email,
-				password: password
-			}
+			url: '/api/getBusiness'
 		}).success(function(response){
-            dfd.resolve(response);
+			console.log(response);
+            dfd.resolve(response[0]);
         }).catch(function(err){
             dfd.reject(err);
         });
         return dfd.promise;
     };
-    this.postBusiness = function(
-			email,
-			password,
-			businessName,
-			businessAddress,
-			city,
-			state,
-			zip,
-			vote
-		){
+    this.postBusiness = function (user, businessName, businessAddress, city, state, zip, vote, comments){
 		var dfd = $q.defer();
+		// console.log(user)
 		$http({
 			method: 'POST',
 			url: '/api/postBusiness',
 			data: {
-				email: email,
-				password: password,
+				userId: user,
 				businessName: businessName,
 				businessAddress: businessAddress,
 				city: city,
 				state: state,
 				zip: zip,
-				vote: vote
+				vote: vote,
+				comments: comments
 			}
 		}).success(function(response){
-            dfd.resolve(response);
-        }).catch(function(err){
-            dfd.reject(err);
-        });
-        return dfd.promise;
-    };
-     this.getBusiness = function(
-			email,
-			password,
-			businessName,
-			businessAddress,
-			city,
-			state,
-			zip,
-			vote
-		){
-		var dfd = $q.defer();
-		$http({
-			method: 'GET',
-			url: '/api/getBusiness',
-			data: {
-				email: email,
-				password: password,
-				businessName: businessName,
-				businessAddress: businessAddress,
-				city: city,
-				state: state,
-				zip: zip,
-				vote: vote
-			}
-		}).success(function(response){
+			console.log(response);	
             dfd.resolve(response);
         }).catch(function(err){
             dfd.reject(err);
