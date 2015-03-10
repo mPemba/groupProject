@@ -3,12 +3,14 @@ var bcrypt = require('bcrypt');
 var q = require('q');
 
 var schema = mongoose.Schema({
+	userId: String,
 	email: {type: String, required: true, unique: true},
 	password: {type: String, required: true}
 });
 
 schema.pre('save', function(next){
 	var user = this;
+	console.log(user);
 	if (!user.isModified('password')) {
 		return next();
 	}

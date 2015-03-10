@@ -9,9 +9,8 @@ var cors = require('cors');
 mongoose.connect('mongodb://localhost/groupProject');
 
 // Routing =======================
-var User = require('./api/models/profileModel');
+var User = require('./api/models/authModel');
 var AuthCtrl = require('./api/controllers/authCtrl');
-var ProfileCtrl = require('./api/controllers/profileCtrl');
 var BusinessCtrl = require('./api/controllers/businessCtrl');
 
 // Middleware =========================
@@ -58,7 +57,8 @@ app.use(passport.session());
 // Authentication ========================
 app.post('/api/auth', passport.authenticate('local'), function(req, res){
 	//if auth was successful, this will happen
-	return res.status(200).end();
+	// console.log(req.user._id);
+	return res.status(200).json(req.user._id);
 });
 app.post('/api/register', function(req, res) {
 	//create a user
@@ -71,18 +71,8 @@ app.post('/api/register', function(req, res) {
 	});
 });
 
-var isAuthed = function(req, res, next) {
-	if (!req.isAuthenticated()) {
-		return res.status(403).end();
-	}
-	return next();
-};
-
 // Endpoints =============================== 
 app.get('/api/auth', AuthCtrl.profile);
-
-app.get('/api/getProfile', ProfileCtrl.get);
-app.post('/api/postProfile', ProfileCtrl.post);
 
 app.get('/api/getBusiness', BusinessCtrl.get);
 app.post('/api/postBusiness', BusinessCtrl.post);

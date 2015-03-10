@@ -1,8 +1,10 @@
 angular.module('groupProject')
-.controller('authCtrl', function($scope, $location, AuthService) {
+.controller('authCtrl', function($scope, $location, AuthService, $rootScope) {
 	$scope.state = 'login';
 	$scope.clickLogin = function() {
-		AuthService.login($scope.email, $scope.password).then(function() {
+		AuthService.login($scope.email, $scope.password).then(function(response) {
+			$rootScope.user = response;
+			// console.log($rootScope.user);
 			$location.path('/home');
 		}).catch(function(err) {
 			$scope.loginError = true;
