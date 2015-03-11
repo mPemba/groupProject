@@ -57,7 +57,7 @@ app.use(passport.session());
 // Authentication ========================
 app.post('/api/auth', passport.authenticate('local'), function(req, res){
 	//if auth was successful, this will happen
-	// console.log(req.user._id);
+	//console.log(req.user._id);
 	return res.status(200).json(req.user._id);
 });
 app.post('/api/register', function(req, res) {

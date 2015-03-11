@@ -22,3 +22,14 @@ api/register: example
 	"rating": 5,
 	"comments": "great food lousy atmospher"
 }
+
+{
+	"userId": "54fd50c1ad90517437b95793",
+	"businessName": "cat in the hat",
+	"businessAddress": "Somewhere",
+	  "city": "someplace",
+	  "state": "sometime",
+	  "zip": "someday",
+	"rating": "5",
+	"comments": "something to say"
+}
