@@ -36,4 +36,23 @@
     </div>
   </modal-dialog>
   </div>
+
+ 
+  <div ng-model="user"></div>
+  <h4>How was Your Eating Experince...?</h4>
+  <input type="text" ng-model="comment"/><br>
+  <h4>Rate Your Eating Experince</h4>
+  <form name="myForm">
+  <input type="radio" ng-model="rating" ng-value="1"/>
+  <input type="radio" ng-model="rating" ng-value="2"/>
+  <input type="radio" ng-model="rating" ng-value="3"/>
+  <input type="radio" ng-model="rating" ng-value="4"/>
+  <input type="radio" ng-model="rating" ng-value="5"/>
+  <tt>rating = {{rating | json}}</tt><br/>
+ </form>
+  <div ng-model="newObjVar.name"</div>   
+  <div ng-model="newObjVar.vicinity"</div> 
+  <div name="businessLocation" ng-modal="newObjVar.vicinity"></div>  
+  <button ng-click="clickAddInfo()">Save</button>
+</div>
 </div>

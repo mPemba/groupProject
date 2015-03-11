@@ -42,12 +42,6 @@ app.service('mapsService', function($window, $q, $http){
 		  if (status == google.maps.places.PlacesServiceStatus.OK) {
 		  	newResults = results;
 
-
-		    
-		    
-	  
-		  	
-
 		    if(results){
 		    	dfd.resolve(results);
 		    }
@@ -69,11 +63,29 @@ app.service('mapsService', function($window, $q, $http){
    	        	placeWithDetails = place;
    	        	deferred.resolve(placeWithDetails);
    	        	
-   	        
    	    }
    	    
    });﻿
-		return deferred.promise;
-		
+		return deferred.promise;	
 	}
+    this.postBusiness = function (user, comment, businessName, businessLocation, rating){
+    	var dfd = $q.defer();
+    	$http({
+    		method: 'POST',
+    		url: '/api/postBusiness',
+    		data: {
+    			userId: user,	
+			 	comment: comment,
+			 	businessName: businessName,
+			 	businessLocation: businessLocation,
+			 	rating: rating
+    		}
+    	}).success(function(response){
+			console.log(response);	
+            dfd.resolve(response);
+        }).catch(function(err){
+            dfd.reject(err);
+        });
+        return dfd.promise;
+    };
 });
