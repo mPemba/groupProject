@@ -12,7 +12,7 @@
       <img ng-src="{{newObjVar.photos[0].getUrl({'maxWidth': 500, 'maxHeight': 500})}}"/>
     </div>
     <div>
-      <p class='rating'> Rating: {{newObjVar.rating}} </p>
+      <p class='res-rating'> Rating: {{newObjVar.rating}} </p>
       <img ng-click='nextPlace()' src='https://cdn0.iconfinder.com/data/icons/super-mono-reflection/red/button-cross_red.png' class='x'/>
       <!-- <img src='https://cdn0.iconfinder.com/data/icons/super-mono-reflection/green/button-add_green.png' class='plus'/> -->
       <img ng-click='toggleModal()' src='https://cdn0.iconfinder.com/data/icons/super-mono-reflection/green/button-check_green.png' class='check'/>
@@ -38,18 +38,18 @@
   </div>
 
 
-  <div ng-model="user" class='rating-div'></div>
+  <div ng-model="user"></div>
   <h4>How was Your Eating Experince...?</h4>
   <input type="text" ng-model="comment"/><br>
   <h4>Rate Your Eating Experince</h4>
-  <form name="myForm">
-  <input type="radio" ng-model="rating" ng-value="1"/>
-  <input type="radio" ng-model="rating" ng-value="2"/>
-  <input type="radio" ng-model="rating" ng-value="3"/>
-  <input type="radio" ng-model="rating" ng-value="4"/>
-  <input type="radio" ng-model="rating" ng-value="5"/>
-  <tt>rating = {{rating | json}}</tt><br/>
- </form>
+  <form name="myForm"  class='rating'>
+    <input name="myrating" type="radio" value='5' /><span>☆</span>
+    <input name="myrating" type="radio" value='4' /><span>☆</span>
+    <input name="myrating" type="radio" value='3' /><span>☆</span>
+    <input name="myrating" type="radio" value='2' /><span>☆</span>
+    <input name="myrating" type="radio" value='1' /><span>☆</span>
+  </form>
+  <!-- <tt>{{rating | json}}</tt><br/> -->
   <div ng-model="newObjVar.name"</div>
   <div ng-model="newObjVar.vicinity"</div>
   <div name="businessLocation" ng-modal="newObjVar.vicinity"></div>
