@@ -38,13 +38,14 @@ body {
   background-color: #494A49;
   height: 300px;
 }*/
-/*
+
 .title{
   text-align: center;
   color: white;
   font-size: 150px;
-  margin-top: 80px;
+  margin-top: 100px;
   font-family: 'Pathway Gothic One', sans-serif;
+  z-index: 10;
 }
 
 .subtitle{
@@ -52,8 +53,9 @@ body {
   color: white;
   font-size: 15px;
   font-family: 'Pathway Gothic One', sans-serif;
-  margin-bottom: 80px;
-}*/
+  margin-bottom: 60px;
+  z-index: 10;
+}
 
 .login-image {
     width: 100%;
@@ -65,13 +67,13 @@ body {
     position: fixed;
     right: 0;
     top: 0;
+    z-index: -1;
 }
 
 .login-auth{
   color: white;
-  position: absolute;
-  top: 40px;
-  left: 1050px;
+  top: 380px;
+  text-align: center;
   z-index: 10;
 }
 
