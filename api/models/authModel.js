@@ -10,7 +10,6 @@ var schema = mongoose.Schema({
 
 schema.pre('save', function(next){
 	var user = this;
-	console.log(user);
 	if (!user.isModified('password')) {
 		return next();
 	}

@@ -1,4 +1,3 @@
-
 var app = angular.module('groupProject');
 app.controller('homeCtrl', function($scope, $rootScope, mapsService) {
 	$scope.modalShown = false;
@@ -54,4 +53,13 @@ $scope.clickAddInfo = function(){
         value: '1'
       };
 };		
+
+// 	mapsService.getBusiness(
+// 		$scope.newObjVar.name,
+// 		$scope.newObjVar.vicinity
+// 	).then(function(res){
+// 		res.status(200).json(response);
+// 	}, function(err){
+// 		res.status(400).json(err);
+// 	})
 });

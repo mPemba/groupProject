@@ -1,29 +1,25 @@
 angular.module('groupProject')
 .controller('profileCtrl', function($scope, $rootScope, profileService){
- 	$scope.clickNewInfo = function(){
-		// console.log($rootScope.user)
- 		profileService.postBusiness(
- 			$rootScope.user,
-	 		$scope.businessName,
-	 		$scope.businessAddress,
-	 		$scope.city,
-	 		$scope.state,
-	 		$scope.zip,
-	 		$scope.rating,
-	 		$scope.comments
- 		)
-		};
-    $scope.clickUpDate = function(){
+ 	$scope.clickUpDate = function(){
+ 	profileService.getBusiness()
+ 	.then(function(res){
+		$scope.User = $rootScope.userId;
+		$scope.userId = res.userId;
+		$scope.comment = res.comment;
+		$scope.businessName = res.businessName;
+		$scope.businessLocation = res.businessLocation;
+		$scope.rating = res.rating;
+ 		})
+ 	};
+ 	$scope.clickUpDate = function(){
  		profileService.getBusiness()
  		.then(function(res){
- 			$scope.User = $rootScope.user ;
+ 			$scope.User = $rootScope.userId;
+ 			$scope.userId = res.userId;
+ 			$scope.comment = res.comment;
 			$scope.businessName = res.businessName;
-	 		$scope.businessAddress = res.businessAddress;
-	 		$scope.city = res.city;
-	 		$scope.state = res.state;
-	 		$scope.zip = res.zip;
+	 		$scope.businessLocation = res.businessLocation;
 	 		$scope.rating = res.rating;
-	 		$scope.comments = res.comments;
  		})
  	};
 });
