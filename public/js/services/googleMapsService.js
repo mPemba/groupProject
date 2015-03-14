@@ -88,4 +88,17 @@ app.service('mapsService', function($window, $q, $http){
         });
         return dfd.promise;
     };
+ 	this.getBusiness = function(businessName, businessLocation){
+		var dfd = $q.defer();
+		$http({
+			method: 'GET',
+			url: '/api/getBusiness' + "?businessName=" + businessName + "&businessLocation=" + businessLocation
+		}).success(function(response){
+			console.log(111111111111, response);
+            dfd.resolve(response);
+        }).catch(function(err){
+            	dfd.reject(err);
+        		});
+        	return dfd.promise;
+    };
 });
