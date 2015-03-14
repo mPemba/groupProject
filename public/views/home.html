@@ -39,7 +39,7 @@
     </div>
   </modal-dialog>
   </div>
-  
+
 
                     <!-- code for user input -->
 
@@ -51,13 +51,14 @@
       <input type="text" ng-model="comment"/><br>
     <h4>Rate Your Experince</h4>
       <form name="myForm" class='rating'>
-        <input type="radio" ng-model="rating" ng-value="1"/><span>☆</span>
-        <input type="radio" ng-model="rating" ng-value="2"/><span>☆</span>
-        <input type="radio" ng-model="rating" ng-value="3"/><span>☆</span>
-        <input type="radio" ng-model="rating" ng-value="4"/><span>☆</span>
         <input type="radio" ng-model="rating" ng-value="5"/><span>☆</span>
-        <tt>rating = {{rating | json}}</tt><br/>
+        <input type="radio" ng-model="rating" ng-value="4"/><span>☆</span>
+        <input type="radio" ng-model="rating" ng-value="3"/><span>☆</span>
+        <input type="radio" ng-model="rating" ng-value="2"/><span>☆</span>
+        <input type="radio" ng-model="rating" ng-value="1"/><span>☆</span>
       </form>
+        <tt>rating = {{rating | json}}</tt><br/>
+
     <button ng-click="clickAddInfo()">Save</button>
 
   </div>
