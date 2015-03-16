@@ -8,6 +8,13 @@ app.service('mapsService', function($window, $q, $http){
 	var location;
 	var placeWithDetails;
 	var newResults;
+	var marker;
+
+	this.changeMarkerPosition = function(arg) {
+    map.setCenter(arg);
+    marker.setPosition(arg);
+}
+
 
 	this.init = function() {
 		var dfd = $q.defer();
@@ -24,6 +31,11 @@ app.service('mapsService', function($window, $q, $http){
 	      mapTypeId: google.maps.MapTypeId.SATELLITE,
 	      disableDefaultUI: true
 	    });
+	     marker = new google.maps.Marker({
+		      position: location,
+		      map: map,
+		      title: 'Hello World!'
+		  });
 
 	    var request = {
 	    	location: location,
@@ -41,12 +53,6 @@ app.service('mapsService', function($window, $q, $http){
 	  function callback(results, status) {
 		  if (status == google.maps.places.PlacesServiceStatus.OK) {
 		  	newResults = results;
-
-
-		    
-		    
-	  
-		  	
 
 		    if(results){
 		    	dfd.resolve(results);
@@ -69,11 +75,42 @@ app.service('mapsService', function($window, $q, $http){
    	        	placeWithDetails = place;
    	        	deferred.resolve(placeWithDetails);
    	        	
-   	        
    	    }
    	    
    });﻿
-		return deferred.promise;
-		
+		return deferred.promise;	
 	}
+    this.postBusiness = function (user, comment, businessName, businessLocation, rating){
+    	var dfd = $q.defer();
+    	$http({
+    		method: 'POST',
+    		url: '/api/postBusiness',
+    		data: {
+    			userId: user,	
+			 	comment: comment,
+			 	businessName: businessName,
+			 	businessLocation: businessLocation,
+			 	rating: rating
+    		}
+    	}).success(function(response){
+			console.log(response);	
+            dfd.resolve(response);
+        }).catch(function(err){
+            dfd.reject(err);
+        });
+        return dfd.promise;
+    };
+ 	this.getBusiness = function(businessName, businessLocation){
+		var dfd = $q.defer();
+		$http({
+			method: 'GET',
+			url: '/api/getBusiness' + "?businessName=" + businessName + "&businessLocation=" + businessLocation
+		}).success(function(response){
+			console.log(111111111111, response);
+            dfd.resolve(response);
+        }).catch(function(err){
+            	dfd.reject(err);
+        		});
+        	return dfd.promise;
+    };
 });
