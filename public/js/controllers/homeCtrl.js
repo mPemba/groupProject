@@ -1,6 +1,9 @@
 var app = angular.module('groupProject');
 app.controller('homeCtrl', function($scope, $rootScope, mapsService) {
+
 	
+
+
 	$scope.modalShown = false;
     $scope.toggleModal = function() {
     	newLocation($scope.newDataArr[counter - 1].geometry.location);
@@ -8,10 +11,13 @@ app.controller('homeCtrl', function($scope, $rootScope, mapsService) {
     	$scope.getAllMapDetails();
     $scope.modalShown = !$scope.modalShown;
   };
+
   var newLocation = function(arg){
 		mapsService.changeMarkerPosition(arg);
 
 	}
+
+
 	$scope.test = "home page test test";
 	// $scope.getPlaces = function() {
 	// 	mapsService.getPlaces().then(function(res) {

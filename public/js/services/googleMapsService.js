@@ -113,4 +113,5 @@ app.service('mapsService', function($window, $q, $http){
         		});
         	return dfd.promise;
     };
+
 });

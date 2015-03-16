@@ -1,37 +1,33 @@
+<div  class="row">
+    <h3>Your Registration Info:</h3>
 
-            <h1>MY PROFILE:</h1>
-
-<div class="row">
-	<h3>Your Registration Info:</h3>
-
-	<strong>Email:</strong>
-    <input type="email" ng-model="email"/><br>
- <!--    <strong>Password:</strong>
-    <input type="password" ng-model="password"/><br> -->
+    <strong>user:</strong>
+    <input type="text" ng-model="user"/><br>
+    <input type="text" ng-model="userId"/><br>
 
     <h3>Your Saved Restaurants Listing:</h3>
 
     <strong>Restaurant Name:</strong>
     <input type="text" ng-model="businessName"/><br>
+    
     <strong>Business Address:</strong>
-    <input type="text" ng-model="businessAddress"/><br>
-    <strong>City:</strong>
-    <input type="text" ng-model="city"/><br>
-    <strong>State:</strong>
-    <input type="text" ng-model="state"/><br>
-    <strong>Zip:</strong>
-    <input type="text" ng-model="zip"/><br>
-    <strong>Your Rating:</strong>
-    <input type="text" ng-model="vote"/><br>
+    <input type="text" ng-model="businessLocation"/><br>
+
+    <strong>Rating:</strong>
+    <input type="text" ng-model="rating"/><br>
+ 
     <strong>Your Comments:</strong>
-    <input type="text" ng-model="comments"/><br>
+    <input type="text" ng-model="comment"/><br>
 
     <div class="vote">
-	    <div class="arrow-up" ng-click="upVote()"><br>{{vote}}<br></div>
-	    <br>
-	    <div class="arrow-down" ng-click="downVote()"></div>
-		</div>
-	<button ng-click="clickNewInfo()">Save</button>
-	<button ng-click="clickUpDate()">Update</button>
+        <div class="arrow-up" ng-click="upVote()"><br>{{vote}}<br></div>
+        <br>
+        <div class="arrow-down" ng-click="downVote()"></div>
+        </div>
+    <!-- <button ng-click="clickNewInfo()">Save</button> -->
+    <button ng-click="clickUpDate()">Update</button>
+    <hr>
+ 
+
 
 </div>

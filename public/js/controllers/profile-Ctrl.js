@@ -1,64 +1,25 @@
 angular.module('groupProject')
-.controller('profileCtrl', function($scope, profileService){
- 	$scope.clickRegister = function(){
- 		profileService.postProfile(
-	 		$scope.email,
-	 		$scope.password
- 		)
+.controller('profileCtrl', function($scope, $rootScope, profileService){
+ 	$scope.clickUpDate = function(){
+ 	profileService.getBusiness()
+ 	.then(function(res){
+		$scope.User = $rootScope.userId;
+		$scope.userId = res.userId;
+		$scope.comment = res.comment;
+		$scope.businessName = res.businessName;
+		$scope.businessLocation = res.businessLocation;
+		$scope.rating = res.rating;
+ 		})
  	};
- 	$scope.clickNewInfo = function(){
- 		profileService.postBusiness(
-	 		$scope.email,
-	 		$scope.password,
-	 		$scope.businessName,
-	 		$scope.businessAddress,
-	 		$scope.city,
-	 		$scope.state,
-	 		$scope.zip,
-	 		$scope.vote,
-	 		$scope.comments
- 		)
- 			$scope.businessName = '';
-	 		$scope.businessAddress = '';
-	 		$scope.city = '';
-	 		$scope.state = '';
-	 		$scope.zip = '';
-	 		$scope.votes = '';
-	 		$scope.comments = '';
-	 	clearInfo();
-		$scope.upVote = function () {
-        	$scope.vote++;
-    }
-	    $scope.downVote = function () {
-	        $scope.vote--;
-    }
-    	$scope.vote = 0;
-    };
-    $scope.clickUpDate = function(){
- 		profileService.getBusiness(
-	 		$scope.email,
-	 		$scope.password,
-	 		$scope.businessName,
-	 		$scope.businessAddress,
-	 		$scope.city,
-	 		$scope.state,
-	 		$scope.zip,
-	 		$scope.vote,
-	 		$scope.comments
- 		)
- 			$scope.businessName = '';
-	 		$scope.businessAddress = '';
-	 		$scope.city = '';
-	 		$scope.state = '';
-	 		$scope.zip = '';
-	 		$scope.vote = '';
-	 		$scope.comments = '';
+ 	$scope.clickUpDate = function(){
+ 		profileService.getBusiness()
+ 		.then(function(res){
+ 			$scope.User = $rootScope.userId;
+ 			$scope.userId = res.userId;
+ 			$scope.comment = res.comment;
+			$scope.businessName = res.businessName;
+	 		$scope.businessLocation = res.businessLocation;
+	 		$scope.rating = res.rating;
+ 		})
  	};
-	$scope.upVote = function () {
-        $scope.vote++;
-    }
-    $scope.downVote = function () {
-        $scope.vote--;
-    }
-    $scope.vote = 0;
 });

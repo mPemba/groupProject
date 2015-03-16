@@ -24,6 +24,7 @@ angular.module('groupProject')
 				password: password
 			}
 		}).then(function(response) {
+			//console.log(response.data);
 			deferred.resolve(response.data);
 		}).catch(function(err) {
 			console.log("error logging in");
