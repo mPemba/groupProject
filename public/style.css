@@ -220,9 +220,11 @@ body {
 
 #map {
   height: 200px;
-  width: 200px;
+  width: 100%;
   border: 1px solid silver;
   border-radius: 5px;
   margin-right: auto;
   margin-left: auto;
+  bottom:0px;
+  
 }
