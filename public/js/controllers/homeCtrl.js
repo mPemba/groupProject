@@ -7,7 +7,6 @@ app.controller('homeCtrl', function($scope, $rootScope, mapsService) {
 	$scope.modalShown = false;
     $scope.toggleModal = function() {
     	newLocation($scope.newDataArr[counter - 1].geometry.location);
-    	console.log($scope.newDataArr[counter - 1].geometry.location);
     	$scope.getAllMapDetails();
     $scope.modalShown = !$scope.modalShown;
   };
