@@ -1,23 +1,11 @@
 var app = angular.module('groupProject');
 app.controller('homeCtrl', function($scope, $rootScope, mapsService) {
-
-	
-
-
 	$scope.modalShown = false;
     $scope.toggleModal = function() {
-    	newLocation($scope.newDataArr[counter - 1].geometry.location);
-    	console.log($scope.newDataArr[counter - 1].geometry.location);
     	$scope.getAllMapDetails();
     $scope.modalShown = !$scope.modalShown;
+    loadPriorUserInput();
   };
-
-  var newLocation = function(arg){
-		mapsService.changeMarkerPosition(arg);
-
-	}
-
-
 	$scope.test = "home page test test";
 	// $scope.getPlaces = function() {
 	// 	mapsService.getPlaces().then(function(res) {
@@ -42,6 +30,7 @@ app.controller('homeCtrl', function($scope, $rootScope, mapsService) {
 	newData();
 	var counter = 0;
 	$scope.getAllMapDetails = function(){
+		console.log(counter)
 		mapsService.getAllDetails(counter).then(function(res){
 			$scope.phoneNumber = res.formatted_phone_number;
 			$scope.morePhotos = res.photos;			
@@ -67,16 +56,16 @@ $scope.clickAddInfo = function(){
         value: '1'
       };
 };		
-	$scope.loadPriorUserInput = function(){
+	var loadPriorUserInput = function(){
 		mapsService.getPriorUserInfo(
 			$scope.newObjVar.name,
 			$scope.newObjVar.vicinity,
-			$scope.proirComments,
-			$scope.proirRatings
+			$scope.priorComment,
+			$scope.priorRating
 		).then(function(res){
-		res.status(200).json(response);
-		}, function(err){
-			res.status(400).json(err);
+			//console.log(2222222222, res)
+			$scope.comment = res.comment;
+			$scope.rating = res.rating;
 		})
 	}
 });

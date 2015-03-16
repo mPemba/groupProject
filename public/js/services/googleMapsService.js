@@ -105,13 +105,9 @@ app.service('mapsService', function($window, $q, $http){
 		var dfd = $q.defer();
 		$http({
 			method: 'GET',
-			url: '/api/getBusiness' + "?businessName=" + businessName + "&businessLocation=" + businessLocation,
-			data: {
-				comment: comment,
-				rating: rating
-			}
+			url: '/api/getBusiness' + "?businessName=" + businessName + "&businessLocation=" + businessLocation
 		}).success(function(response){
-			console.log(111111111111, response);
+			//console.log(111111111111, response);
             dfd.resolve(response);
         }).catch(function(err){
             	dfd.reject(err);
