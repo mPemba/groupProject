@@ -1,4 +1,3 @@
-<!-- <div id="map"></div> -->
 
 <div class='nav-bar'>
   <img src='http://www.logogarden.com/user_images/logo_1474158_fp3i9ed3_web.png' class='logo'/>
@@ -14,6 +13,9 @@
     <div>
       <p class='rating'> Rating: {{newObjVar.rating}} </p>
       <img ng-click='nextPlace()' src='https://cdn0.iconfinder.com/data/icons/super-mono-reflection/red/button-cross_red.png' class='x'/>
+
+        <!--     need a back button here -->
+
       <!-- <img src='https://cdn0.iconfinder.com/data/icons/super-mono-reflection/green/button-add_green.png' class='plus'/> -->
       <img ng-click='toggleModal()' src='https://cdn0.iconfinder.com/data/icons/super-mono-reflection/green/button-check_green.png' class='check'/>
       <modal-dialog show='modalShown' width='500px' height='60%'>
@@ -29,11 +31,34 @@
             
           </li>
 
-          <div id="map"></div>
-          <div id="map-canvas"></div>
+<!--           <div id="map"></div>
+          <div id="map-canvas"></div> -->
     <!-- </div>
     <div class='obj-loc'>{{newObjVar.vicinity}}</div> -->
     </div>
   </modal-dialog>
   </div>
+
+                    <!-- code for user input -->
+
+    <div ng-model="user"></div> 
+    <div ng-model="newObjVar.name"></div>   
+    <div ng-model="newObjVar.vicinity"></div> 
+    <div name="businessLocation" ng-modal="newObjVar.vicinity"></div>  
+    <h4>How was Your Eating Experince...?</h4>
+      <input type="text" ng-model="comment"/><br>
+    <h4>Rate Your Experince</h4>
+      <form name="myForm">
+        <input type="radio" ng-model="rating" ng-value="1"/>
+        <input type="radio" ng-model="rating" ng-value="2"/>
+        <input type="radio" ng-model="rating" ng-value="3"/>
+        <input type="radio" ng-model="rating" ng-value="4"/>
+        <input type="radio" ng-model="rating" ng-value="5"/>
+        <tt>rating = {{rating | json}}</tt><br/>
+      </form>
+    <button ng-click="clickAddInfo()">Save</button>
+    
+  </div>
+  <div id="map"></div>
+
 </div>
