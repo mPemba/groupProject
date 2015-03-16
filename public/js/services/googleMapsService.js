@@ -68,10 +68,11 @@ app.service('mapsService', function($window, $q, $http){
    });﻿
 		return deferred.promise;	
 	}
+	// --------------  user input -------------------- 
     this.postBusiness = function (user, comment, businessName, businessLocation, rating){
     	var dfd = $q.defer();
     	$http({
-    		method: 'POST',
+    		method: 'POST', 
     		url: '/api/postBusiness',
     		data: {
     			userId: user,	
@@ -88,11 +89,15 @@ app.service('mapsService', function($window, $q, $http){
         });
         return dfd.promise;
     };
- 	this.getBusiness = function(businessName, businessLocation){
+ 	this.getPriorUserInfo = function(businessName, businessLocation, comment, rating){
 		var dfd = $q.defer();
 		$http({
 			method: 'GET',
-			url: '/api/getBusiness' + "?businessName=" + businessName + "&businessLocation=" + businessLocation
+			url: '/api/getBusiness' + "?businessName=" + businessName + "&businessLocation=" + businessLocation,
+			data: {
+				comment: comment,
+				rating: rating
+			}
 		}).success(function(response){
 			console.log(111111111111, response);
             dfd.resolve(response);

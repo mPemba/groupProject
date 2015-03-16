@@ -39,6 +39,8 @@ app.controller('homeCtrl', function($scope, $rootScope, mapsService) {
 		$scope.newObjVar = $scope.newDataArr[counter];
 		counter = counter + 1;
 	};
+
+	// ------------ user input ------------------
 $scope.clickAddInfo = function(){
  	//console.log($rootScope.user)
 	mapsService.postBusiness(
@@ -53,13 +55,16 @@ $scope.clickAddInfo = function(){
         value: '1'
       };
 };		
-
-// 	mapsService.getBusiness(
-// 		$scope.newObjVar.name,
-// 		$scope.newObjVar.vicinity
-// 	).then(function(res){
-// 		res.status(200).json(response);
-// 	}, function(err){
-// 		res.status(400).json(err);
-// 	})
+	$scope.loadPriorUserInput = function(){
+		mapsService.getPriorUserInfo(
+			$scope.newObjVar.name,
+			$scope.newObjVar.vicinity,
+			$scope.proirComments,
+			$scope.proirRatings
+		).then(function(res){
+		res.status(200).json(response);
+		}, function(err){
+			res.status(400).json(err);
+		})
+	}
 });
