@@ -15,13 +15,13 @@ app.controller('homeCtrl', function($scope, $rootScope, mapsService) {
 	var newData = function(){
 		mapsService.init().then(function(res){
 			$scope.newDataArr = res;
-			
+
 			var photo = res.photos;
 			//console.log(photo)
 		    //$scope.newPhoto = res[0].photos[0].getUrl({'maxWidth': 500, 'maxHeight': 500});
 		    //console.log($scope.newPhoto)
 			// if (photo) {
-			// 	//$scope.newPhoto = photo.getUrl({'maxWidth': 500, 'maxHeight': 500}); 
+			// 	//$scope.newPhoto = photo.getUrl({'maxWidth': 500, 'maxHeight': 500});
 			// }
 			$scope.nextPlace()
 		})
@@ -32,8 +32,8 @@ app.controller('homeCtrl', function($scope, $rootScope, mapsService) {
 		console.log(counter)
 		mapsService.getAllDetails(counter).then(function(res){
 			$scope.phoneNumber = res.formatted_phone_number;
-			$scope.morePhotos = res.photos;			
-		});		
+			$scope.morePhotos = res.photos;
+		});
 	}
 	$scope.nextPlace = function(){
 		$scope.newObjVar = $scope.newDataArr[counter];
@@ -52,7 +52,11 @@ $scope.clickAddInfo = function(){
 	$scope.rating = {
         value: '1'
       };
-};		
+};
+
+
+
+
 
 // 	mapsService.getBusiness(
 // 		$scope.newObjVar.name,
