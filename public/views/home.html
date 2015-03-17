@@ -1,7 +1,7 @@
 
 <div class='nav-bar'>
   <img src='http://www.logogarden.com/user_images/logo_1474158_fp3i9ed3_web.png' class='logo'/>
-  <a class='profile-link' href='http://www.google.com'> Profile <img src='https://cdn2.iconfinder.com/data/icons/fatcow/16x16/bullet_arrow_right.png' class='profile-icon'/></a>
+  <a href='#/profile' class='profile-link'> Profile <img src='https://cdn2.iconfinder.com/data/icons/fatcow/16x16/bullet_arrow_right.png' class='profile-icon'/></a>
 </div>
 
 <div class="main-results-container" ng-model="mainResult">
@@ -11,7 +11,7 @@
       <img ng-src="{{newObjVar.photos[0].getUrl({'maxWidth': 500, 'maxHeight': 500})}}"/>
     </div>
     <div>
-      <p class='rating'> Rating: {{newObjVar.rating}} </p>
+      <p class='res-rating'> Rating: {{newObjVar.rating}} </p>
       <img ng-click='nextPlace()' src='https://cdn0.iconfinder.com/data/icons/super-mono-reflection/red/button-cross_red.png' class='x'/>
 
         <!--     need a back button here -->
@@ -26,10 +26,13 @@
           <p class='modal-open'>Open now: {{newObjVar.opening_hours.open_now}}</p>
           <p class='modal-hours'>{{newObjVar.opening_hours.weekday_text}}</p>
           <p class+'modal-phoneNumber'>{{phoneNumber}}</p>
-          <li ng-repeat="pictures in morePhotos"> 
-            <img ng-src="{{pictures.getUrl({'maxWidth': 500, 'maxHeight': 500})}}">
-            
-          </li>
+
+
+          
+              <li ng-repeat="pictures in morePhotos">
+                <img ng-src="{{pictures.getUrl({'maxWidth': 500, 'maxHeight': 500})}}"/>
+              </li>
+
 
 <!--           <div id="map"></div>
           <div id="map-canvas"></div> -->
@@ -39,25 +42,27 @@
   </modal-dialog>
   </div>
 
+
                     <!-- code for user input -->
 
-    <div ng-model="user"></div> 
-    <div ng-model="newObjVar.name"></div>   
-    <div ng-model="newObjVar.vicinity"></div> 
-    <div name="businessLocation" ng-modal="newObjVar.vicinity"></div>  
+    <div ng-model="user"></div>
+    <div ng-model="newObjVar.name"></div>
+    <div ng-model="newObjVar.vicinity"></div>
+    <div name="businessLocation" ng-modal="newObjVar.vicinity"></div>
     <h4>How was Your Eating Experince...?</h4>
       <input type="text" ng-model="comment"/><br>
     <h4>Rate Your Experince</h4>
-      <form name="myForm">
-        <input type="radio" ng-model="rating" ng-value="1"/>
-        <input type="radio" ng-model="rating" ng-value="2"/>
-        <input type="radio" ng-model="rating" ng-value="3"/>
-        <input type="radio" ng-model="rating" ng-value="4"/>
-        <input type="radio" ng-model="rating" ng-value="5"/>
-        <tt>rating = {{rating | json}}</tt><br/>
+      <form name="myForm" class='rating'>
+        <input type="radio" ng-model="rating" ng-value="5"/><span>☆</span>
+        <input type="radio" ng-model="rating" ng-value="4"/><span>☆</span>
+        <input type="radio" ng-model="rating" ng-value="3"/><span>☆</span>
+        <input type="radio" ng-model="rating" ng-value="2"/><span>☆</span>
+        <input type="radio" ng-model="rating" ng-value="1"/><span>☆</span>
       </form>
+        <tt>rating = {{rating | json}}</tt><br/>
+
     <button ng-click="clickAddInfo()">Save</button>
-    
+
   </div>
 
   <div id="map"></div>
