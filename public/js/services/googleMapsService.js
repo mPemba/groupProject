@@ -8,6 +8,14 @@ app.service('mapsService', function($window, $q, $http){
 	var location;
 	var placeWithDetails;
 	var newResults;
+	var marker;
+
+	this.changeMarkerPosition = function(arg) {
+    map.setCenter(arg);
+    marker.setPosition(arg);
+    map.setZoom(20);
+}
+
 
 	this.init = function() {
 		var dfd = $q.defer();
@@ -24,6 +32,11 @@ app.service('mapsService', function($window, $q, $http){
 	      mapTypeId: google.maps.MapTypeId.SATELLITE,
 	      disableDefaultUI: true
 	    });
+	     marker = new google.maps.Marker({
+		      position: location,
+		      map: map,
+		      title: 'Hello World!'
+		  });
 
 	    var request = {
 	    	location: location,
@@ -101,4 +114,5 @@ app.service('mapsService', function($window, $q, $http){
         		});
         	return dfd.promise;
     };
+
 });
