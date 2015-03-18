@@ -1,9 +1,6 @@
 var app = angular.module('groupProject');
 app.controller('homeCtrl', function($scope, $rootScope, mapsService) {
 
-	
-
-
 	$scope.modalShown = false;
     $scope.toggleModal = function() {
     	newLocation($scope.newDataArr[counter - 1].geometry.location);
@@ -44,6 +41,24 @@ app.controller('homeCtrl', function($scope, $rootScope, mapsService) {
 		mapsService.getAllDetails(counter).then(function(res){
 			$scope.phoneNumber = res.formatted_phone_number;
 			$scope.morePhotos = res.photos;
+			var photosArr = res.photos;
+            $scope.myInterval = 5000;
+            console.log($scope.morePhotos);
+            console.log($scope.morePhotos[0].getUrl({'maxWidth': 200, 'maxHeight': 200}))
+            $scope.slides = $scope.morePhotos;
+		  //   $scope.addSlide = function() {
+		  //   var newWidth = 600 + slides.length + 1;
+		  //   	 slides.push(
+		  //     		$scope.morePhotos[0]
+		  //   );
+		  //   	 console.log($scope.slides);
+		    	
+		  // };
+  // for (var i=0; i<4; i++) {
+  //   $scope.addSlide();
+  // }
+
+
 		});
 	}
 	$scope.nextPlace = function(){

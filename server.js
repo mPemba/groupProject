@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var passport = require('passport');
 var localStrategy = require('passport-local').Strategy;
 var mongoose = require('mongoose');
-//var cors = require('cors');
+var cors = require('cors');
 mongoose.connect('mongodb://localhost/groupProject');
 
 // Routing =======================
@@ -45,7 +45,7 @@ passport.deserializeUser(function(obj, done){
 	done(null, obj);
 });
 
-//app.use(cors());
+app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static(__dirname+'/public'));
 app.use(session({secret: 'GROUPSEEKRIT', 
