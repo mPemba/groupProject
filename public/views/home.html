@@ -1,35 +1,59 @@
 
-<div class='nav-bar'>
+<!-- <div class='nav-bar'>
   <img src='http://www.logogarden.com/user_images/logo_1474158_fp3i9ed3_web.png' class='logo'/>
-  <a class='profile-link' href='http://www.google.com'> Profile <img src='https://cdn2.iconfinder.com/data/icons/fatcow/16x16/bullet_arrow_right.png' class='profile-icon'/></a>
-</div>
+  <a href='#/profile' class='profile-link'> Profile <img src='https://cdn2.iconfinder.com/data/icons/fatcow/16x16/bullet_arrow_right.png' class='profile-icon'/></a>
+</div> -->
 
 <div class="main-results-container" ng-model="mainResult">
   <div class='rest-obj'>
-    <div class='obj-name'>{{newObjVar.name}}</div>
+    
+    <div class="headline-container">
+      <div class='main-result-headline'>{{newObjVar.name}}</div>
+    </div>
+
     <div class='obj-pic'>
-      <img ng-src="{{newObjVar.photos[0].getUrl({'maxWidth': 500, 'maxHeight': 500})}}"/>
+      <img class="main-pic" ng-src="{{newObjVar.photos[0].getUrl({'maxWidth': 500, 'maxHeight': 500})}}"/>
     </div>
     <div>
-      <p class='rating'> Rating: {{newObjVar.rating}} </p>
-      <img ng-click='nextPlace()' src='https://cdn0.iconfinder.com/data/icons/super-mono-reflection/red/button-cross_red.png' class='x'/>
+      <p class='res-rating'> Average user rating: {{newObjVar.rating}} </p>
+      <!-- <img ng-click='nextPlace()' src='https://cdn0.iconfinder.com/data/icons/super-mono-reflection/red/button-cross_red.png' class='x'/> -->
+      
 
-        <!--     need a back button here -->
+      <div class="main-btn-container">
+        <div ng-click="nextPlace()" class="nextResultRed"></div>
+        <div ng-click="toggleModal()" class="toggleModalGreen"></div>
+      </div>
 
       <!-- <img src='https://cdn0.iconfinder.com/data/icons/super-mono-reflection/green/button-add_green.png' class='plus'/> -->
-      <img ng-click='toggleModal()' src='https://cdn0.iconfinder.com/data/icons/super-mono-reflection/green/button-check_green.png' class='check'/>
-      <modal-dialog show='modalShown' width='500px' height='60%'>
+      <!-- <img ng-click='toggleModal()' src='https://cdn0.iconfinder.com/data/icons/super-mono-reflection/green/button-check_green.png' class='check'/> -->
+      
+
+      <modal-dialog show='modalShown' width='700px' height='95%'>
         <div class="modal-container">
           <h3 class='modal-name'>{{newObjVar.name}}</h3>
           <p class='modal-rating'>Rating: {{newObjVar.rating}}</p>
           <p class='modal-loc'>{{newObjVar.vicinity}}</p>
           <p class='modal-open'>Open now: {{newObjVar.opening_hours.open_now}}</p>
-          <p class='modal-hours'>{{newObjVar.opening_hours.weekday_text}}</p>
-          <p class+'modal-phoneNumber'>{{phoneNumber}}</p>
-          <li ng-repeat="pictures in morePhotos"> 
-            <img ng-src="{{pictures.getUrl({'maxWidth': 500, 'maxHeight': 500})}}">
-            
-          </li>
+          <!-- <p class='modal-hours'>{{newObjVar.opening_hours.weekday_text}}</p> -->
+          <p class='modal-phone'>{{phoneNumber}}</p>
+
+
+
+          
+              <!-- <li ng-repeat="pictures in morePhotos">
+                <img ng-src="{{pictures.getUrl({'maxWidth': 500, 'maxHeight': 500})}}"/>
+              </li> -->
+              <div>
+  <div class="modal-carousel" style="height: 305px">
+    <carousel interval="myInterval">
+      <slide ng-repeat="slide in slides" active="slide.active">
+        <img ng-src="{{slide.getUrl({'maxWidth': 500, 'maxHeight': 500})}}" style="margin:auto;">
+        <div class="carousel-caption">
+        </div>
+      </slide>
+    </carousel>
+  </div>
+</div>
 
 <!--           <div id="map"></div>
           <div id="map-canvas"></div> -->
@@ -38,7 +62,6 @@
     </div>
   </modal-dialog>
   </div>
-
                     <!-- code for user input -->
 
     <div ng-model="user"></div> 
@@ -57,6 +80,7 @@
         <tt>rating = {{rating | json}}</tt><br/>
       </form>
     <button ng-click="clickAddInfo()">Save</button>
+
   </div>
 
     <div id="map"></div>

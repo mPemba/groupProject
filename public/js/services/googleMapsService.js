@@ -13,6 +13,7 @@ app.service('mapsService', function($window, $q, $http){
 	this.changeMarkerPosition = function(arg) {
     map.setCenter(arg);
     marker.setPosition(arg);
+    map.setZoom(20);
 }
 
 

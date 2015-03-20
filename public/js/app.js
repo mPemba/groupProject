@@ -1,4 +1,4 @@
-angular.module('groupProject', ['ngRoute'])
+angular.module('groupProject', ['ngRoute', 'ui.bootstrap'])
 .config(function($routeProvider){
 	$routeProvider
 		.when('/', {
@@ -22,3 +22,4 @@ angular.module('groupProject', ['ngRoute'])
 			redirectTo: '/'
 		});
 });
+

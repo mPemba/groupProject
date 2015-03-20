@@ -1,12 +1,15 @@
 
-<div class='title-container'>
-	<div class='title'><strong>RESTORE</strong></div>
-	<div class='subtitle'>Restaurant Finder</div>
+<div class='title'>RISTOR</div>
+<div class='subtitle'>Restaurant Finder</div>
+
+<!--
+<div class='login-container'>
+	<img src='https://ununsplash.imgix.net/reserve/EnF7DhHROS8OMEp2pCkx_Dufer%20food%20overhead%20hig%20res.jpg?dpr=2&fit=crop&fm=jpg&h=700&q=75&w=1050' class='login-image'/> -->
+<div class='login-view'>
+	<img src='https://ununsplash.imgix.net/32/Mc8kW4x9Q3aRR3RkP5Im_IMG_4417.jpg?q=75&fm=jpg&s=885ca6be349e07eacd820b8f585c355f' class='login-image'/>
 </div>
 
-<div class='login-container'>
-	<img src='https://ununsplash.imgix.net/reserve/EnF7DhHROS8OMEp2pCkx_Dufer%20food%20overhead%20hig%20res.jpg?dpr=2&fit=crop&fm=jpg&h=700&q=75&w=1050' class='login-image'/>
-
+<<<<<<< HEAD
 	<div class='login-auth'>
 		<div><strong class="login-email-label">email:</strong></div>
 		<div><input class="login-email-input" type="text" ng-model="email" /></div>
@@ -23,3 +26,28 @@
 	</div>
 </div>
 	
+=======
+<div class='login-auth'>
+	<div><strong class="login-email-label">email:</strong></div>
+	<div><input class="login-email-input" type="text" ng-model="email" /></div>
+	<div><strong class="login-password-label">password:</strong></div>
+	<div><input class="login-password-input" type="password" ng-model="password" /></div>
+
+	<div ng-if="state == 'register'">
+		<button class="login-btn" ng-click="clickRegister()">Register</button>
+		<div>Need to <a ng-click=changeState('login') class='login'>login instead?</a></div>
+	</div>
+	<div ng-if="state == 'login'">
+		<button class="login-btn" ng-click="clickLogin()">Login</button>
+		<div>Need to <a ng-click="changeState('register')" class='register'>register instead?</a></div>
+	</div>
+</div>
+
+
+	<!-- <div ng-if="loginError">
+		Login failed.
+	</div>
+	<div ng-if="regError">
+		Registration failed.
+	</div> -->
+>>>>>>> d20928974fe44af935f75bb76522145577ddc64f
