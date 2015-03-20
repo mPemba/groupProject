@@ -1,19 +1,18 @@
 var app = angular.module('groupProject');
 app.controller('homeCtrl', function($scope, $rootScope, mapsService) {
+<<<<<<< HEAD
+	$scope.modalShown = false;
+    $scope.toggleModal = function() {
+=======
 
 	$scope.modalShown = false;
     $scope.toggleModal = function() {
     	newLocation($scope.newDataArr[counter - 1].geometry.location);
+>>>>>>> d20928974fe44af935f75bb76522145577ddc64f
     	$scope.getAllMapDetails();
     $scope.modalShown = !$scope.modalShown;
+    loadPriorUserInput();
   };
-
-  var newLocation = function(arg){
-		mapsService.changeMarkerPosition(arg);
-
-	}
-
-
 	$scope.test = "home page test test";
 	// $scope.getPlaces = function() {
 	// 	mapsService.getPlaces().then(function(res) {
@@ -38,6 +37,7 @@ app.controller('homeCtrl', function($scope, $rootScope, mapsService) {
 	newData();
 	var counter = 0;
 	$scope.getAllMapDetails = function(){
+		console.log(counter)
 		mapsService.getAllDetails(counter).then(function(res){
 			$scope.phoneNumber = res.formatted_phone_number;
 			$scope.morePhotos = res.photos;
@@ -65,6 +65,8 @@ app.controller('homeCtrl', function($scope, $rootScope, mapsService) {
 		$scope.newObjVar = $scope.newDataArr[counter];
 		counter = counter + 1;
 	};
+
+	// ------------ user input ------------------
 $scope.clickAddInfo = function(){
  	//console.log($rootScope.user)
 	mapsService.postBusiness(
@@ -78,6 +80,22 @@ $scope.clickAddInfo = function(){
 	$scope.rating = {
         value: '1'
       };
+<<<<<<< HEAD
+};		
+	var loadPriorUserInput = function(){
+		mapsService.getPriorUserInfo(
+			$scope.newObjVar.name,
+			$scope.newObjVar.vicinity,
+			$scope.priorComment,
+			$scope.priorRating
+		).then(function(res){
+			//console.log(2222222222, res)
+			$scope.comment = res.comment;
+			$scope.rating = res.rating;
+		})
+	}
+});
+=======
 };
 
 
@@ -93,3 +111,4 @@ $scope.clickAddInfo = function(){
 // 		res.status(400).json(err);
 // 	})
 });
+>>>>>>> d20928974fe44af935f75bb76522145577ddc64f
