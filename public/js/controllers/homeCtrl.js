@@ -1,18 +1,18 @@
 var app = angular.module('groupProject');
 app.controller('homeCtrl', function($scope, $rootScope, mapsService) {
-<<<<<<< HEAD
-	$scope.modalShown = false;
-    $scope.toggleModal = function() {
-=======
+
 
 	$scope.modalShown = false;
     $scope.toggleModal = function() {
     	newLocation($scope.newDataArr[counter - 1].geometry.location);
->>>>>>> d20928974fe44af935f75bb76522145577ddc64f
     	$scope.getAllMapDetails();
     $scope.modalShown = !$scope.modalShown;
     loadPriorUserInput();
   };
+  var newLocation = function(arg){		
+		mapsService.changeMarkerPosition(arg);		
+	
+	}
 	$scope.test = "home page test test";
 	// $scope.getPlaces = function() {
 	// 	mapsService.getPlaces().then(function(res) {
@@ -80,7 +80,7 @@ $scope.clickAddInfo = function(){
 	$scope.rating = {
         value: '1'
       };
-<<<<<<< HEAD
+
 };		
 	var loadPriorUserInput = function(){
 		mapsService.getPriorUserInfo(
@@ -95,20 +95,3 @@ $scope.clickAddInfo = function(){
 		})
 	}
 });
-=======
-};
-
-
-
-
-
-// 	mapsService.getBusiness(
-// 		$scope.newObjVar.name,
-// 		$scope.newObjVar.vicinity
-// 	).then(function(res){
-// 		res.status(200).json(response);
-// 	}, function(err){
-// 		res.status(400).json(err);
-// 	})
-});
->>>>>>> d20928974fe44af935f75bb76522145577ddc64f
