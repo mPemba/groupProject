@@ -12,7 +12,10 @@
     </div>
 
     <div class='obj-pic'>
-      <img class="main-pic" ng-src="{{newObjVar.photos[0].getUrl({'maxWidth': 500, 'maxHeight': 500})}}"/>
+      <img ng-if="newObjVar.photos[0]" class="main-pic" ng-src="{{newObjVar.photos[0].getUrl({'maxWidth': 500, 'maxHeight': 500})}}"/>
+      <div ng-if="!newObjVar.photos[0]">
+        <h3>No Image Available</h3>
+    </div>
     </div>
     <div>
       <p class='res-rating'> Average user rating: {{newObjVar.rating}} </p>

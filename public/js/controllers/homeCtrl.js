@@ -71,8 +71,10 @@ app.controller('homeCtrl', function($scope, $rootScope, mapsService) {
 		});
 	}
 	$scope.nextPlace = function(){
+		if(counter < $scope.newDataArr.length){
 		$scope.newObjVar = $scope.newDataArr[counter];
 		counter = counter + 1;
+	}
 	};
 
 	// ------------ user input ------------------
