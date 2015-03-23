@@ -6,7 +6,7 @@
 
 <div class="main-results-container" ng-model="mainResult">
   <div class='rest-obj'>
-    
+
     <div class="headline-container">
       <div class='main-result-headline'>{{newObjVar.name}}</div>
     </div>
@@ -20,25 +20,26 @@
     <div>
       <p class='res-rating'> Average user rating: {{newObjVar.rating}} </p>
       <!-- <img ng-click='nextPlace()' src='https://cdn0.iconfinder.com/data/icons/super-mono-reflection/red/button-cross_red.png' class='x'/> -->
-      
-      <button ng-click="goBack()">Go Back</button>
+
+
       <div class="main-btn-container">
-        <div ng-click="nextPlace()" class="nextResultRed"></div>
-        <div ng-click="toggleModal()" class="toggleModalGreen"></div>
+        <div ng-click="goBack()" class='goBack'><img src='https://cdn4.iconfinder.com/data/icons/miu/22/circle_back_arrow_-48.png'/></div>
+        <div ng-click="nextPlace()" class="nextResultRed"><img src='https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_navigate_next_48px-48.png'/></div>
+        <div ng-click="toggleModal()" class="toggleModalGreen"><img src='https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/add-24.png'/></div>
       </div>
 
       <!-- <img src='https://cdn0.iconfinder.com/data/icons/super-mono-reflection/green/button-add_green.png' class='plus'/> -->
       <!-- <img ng-click='toggleModal()' src='https://cdn0.iconfinder.com/data/icons/super-mono-reflection/green/button-check_green.png' class='check'/> -->
-      
+
 
       <modal-dialog show='modalShown' width='700px' height='95%'>
       <button ng-hide="showModal" ng-click="showModal = !showModal">Want to post a review?</button>
       <button ng-show="showModal" ng-click="showModal = !showModal">Dont want to review?</button>
       <div ng-show="showModal">
-      <div ng-model="user"></div> 
-    <div ng-model="newObjVar.name"></div>   
-    <div ng-model="newObjVar.vicinity"></div> 
-    <div name="businessLocation" ng-modal="newObjVar.vicinity"></div>  
+      <div ng-model="user"></div>
+    <div ng-model="newObjVar.name"></div>
+    <div ng-model="newObjVar.vicinity"></div>
+    <div name="businessLocation" ng-modal="newObjVar.vicinity"></div>
     <h4>How was Your Eating Experince...?</h4>
       <input type="text" ng-model="comment"/><br>
     <h4>Rate Your Experince</h4>
@@ -62,7 +63,7 @@
 
 
 
-          
+
               <!-- <li ng-repeat="pictures in morePhotos">
                 <img ng-src="{{pictures.getUrl({'maxWidth': 500, 'maxHeight': 500})}}"/>
               </li> -->
@@ -87,9 +88,13 @@
   </div>
                     <!-- code for user input -->
 
-    
+
 
   </div>
 
     <div id="map"></div>
+</div>
+
+<div class="main-results-image">
+  <img src='https://unsplash.imgix.net/22/brick-wall.JPG?q=75&fm=jpg&s=384c1f50be9eebb14ce9f91080556c66'/>
 </div>
