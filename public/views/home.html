@@ -29,6 +29,26 @@
       
 
       <modal-dialog show='modalShown' width='700px' height='95%'>
+      <button ng-hide="showModal" ng-click="showModal = !showModal">Want to post a review?</button>
+      <button ng-show="showModal" ng-click="showModal = !showModal">Dont want to review?</button>
+      <div ng-show="showModal">
+      <div ng-model="user"></div> 
+    <div ng-model="newObjVar.name"></div>   
+    <div ng-model="newObjVar.vicinity"></div> 
+    <div name="businessLocation" ng-modal="newObjVar.vicinity"></div>  
+    <h4>How was Your Eating Experince...?</h4>
+      <input type="text" ng-model="comment"/><br>
+    <h4>Rate Your Experince</h4>
+      <form name="myForm">
+        <input type="radio" ng-model="rating" ng-value="1"/>
+        <input type="radio" ng-model="rating" ng-value="2"/>
+        <input type="radio" ng-model="rating" ng-value="3"/>
+        <input type="radio" ng-model="rating" ng-value="4"/>
+        <input type="radio" ng-model="rating" ng-value="5"/>
+        <tt>rating = {{rating | json}}</tt><br/>
+      </form>
+    <button ng-click="clickAddInfo()">Save</button>
+  </div>
         <div class="modal-container">
           <h3 class='modal-name'>{{newObjVar.name}}</h3>
           <p class='modal-rating'>Rating: {{newObjVar.rating}}</p>
@@ -64,22 +84,7 @@
   </div>
                     <!-- code for user input -->
 
-    <div ng-model="user"></div> 
-    <div ng-model="newObjVar.name"></div>   
-    <div ng-model="newObjVar.vicinity"></div> 
-    <div name="businessLocation" ng-modal="newObjVar.vicinity"></div>  
-    <h4>How was Your Eating Experince...?</h4>
-      <input type="text" ng-model="comment"/><br>
-    <h4>Rate Your Experince</h4>
-      <form name="myForm">
-        <input type="radio" ng-model="rating" ng-value="1"/>
-        <input type="radio" ng-model="rating" ng-value="2"/>
-        <input type="radio" ng-model="rating" ng-value="3"/>
-        <input type="radio" ng-model="rating" ng-value="4"/>
-        <input type="radio" ng-model="rating" ng-value="5"/>
-        <tt>rating = {{rating | json}}</tt><br/>
-      </form>
-    <button ng-click="clickAddInfo()">Save</button>
+    
 
   </div>
 
