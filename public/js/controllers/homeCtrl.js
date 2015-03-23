@@ -36,6 +36,10 @@ app.controller('homeCtrl', function($scope, $rootScope, mapsService) {
 	}
 	newData();
 	var counter = 0;
+	$scope.goBack = function(){
+		counter = counter - 1;
+		$scope.newObjVar = $scope.newDataArr[counter - 1];
+	}
 	$scope.getAllMapDetails = function(){
 		console.log(counter)
 		mapsService.getAllDetails(counter).then(function(res){
