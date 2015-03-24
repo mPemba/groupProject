@@ -5,6 +5,7 @@ app.controller('homeCtrl', function($scope, $rootScope, mapsService) {
 	$scope.modalShown = false;
     $scope.toggleModal = function() {
     	newLocation($scope.newDataArr[counter - 1].geometry.location);
+    	
     	$scope.getAllMapDetails();
     $scope.modalShown = !$scope.modalShown;
     loadPriorUserInput();
@@ -46,7 +47,6 @@ app.controller('homeCtrl', function($scope, $rootScope, mapsService) {
 	}
 	}
 	$scope.getAllMapDetails = function(){
-		console.log(counter)
 		mapsService.getAllDetails(counter).then(function(res){
 			$scope.phoneNumber = res.formatted_phone_number;
 			$scope.morePhotos = res.photos;
@@ -74,6 +74,7 @@ app.controller('homeCtrl', function($scope, $rootScope, mapsService) {
 		if(counter < $scope.newDataArr.length){
 		$scope.newObjVar = $scope.newDataArr[counter];
 		counter = counter + 1;
+		newLocation($scope.newDataArr[counter - 1].geometry.location);
 	}
 	};
 
