@@ -9,11 +9,12 @@ app.service('mapsService', function($window, $q, $http){
 	var placeWithDetails;
 	var newResults;
 	var marker;
+	var newMarkerPosition;
 
 	this.changeMarkerPosition = function(arg) {
     map.setCenter(arg);
     marker.setPosition(arg);
-    map.setZoom(20);
+    map.setZoom(14);
 }
 
 
@@ -23,6 +24,7 @@ app.service('mapsService', function($window, $q, $http){
 
 	  $window.navigator.geolocation.getCurrentPosition(function(position) {
 	  	location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+	  	newMarkerPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 	  	console.log(position.coords.latitude + " " + position.coords.longitude);
 
 
@@ -32,6 +34,11 @@ app.service('mapsService', function($window, $q, $http){
 	      mapTypeId: google.maps.MapTypeId.SATELLITE,
 	      disableDefaultUI: true
 	    });
+	    marker = new google.maps.Marker({
+		      position: newMarkerPosition,
+		      map: map,
+		      title: 'Hello World!'
+		  });
 	     marker = new google.maps.Marker({
 		      position: location,
 		      map: map,
