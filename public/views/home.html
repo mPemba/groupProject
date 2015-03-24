@@ -45,12 +45,14 @@
       <input type="text" ng-model="comment"/><br>
     <h4>Rate Your Experince</h4>
       <form name="myForm">
-        <input type="radio" ng-model="rating" ng-value="1"/>
-        <input type="radio" ng-model="rating" ng-value="2"/>
-        <input type="radio" ng-model="rating" ng-value="3"/>
-        <input type="radio" ng-model="rating" ng-value="4"/>
-        <input type="radio" ng-model="rating" ng-value="5"/>
-        <tt>rating = {{rating | json}}</tt><br/>
+        <div class="rating">
+          <input name="myrating" type="radio" value="5" /><span>☆</span>
+          <input name="myrating" type="radio" value="4" /><span>☆</span>
+          <input name="myrating" type="radio" value="3" /><span>☆</span>
+          <input name="myrating" type="radio" value="2" /><span>☆</span>
+          <input name="myrating" type="radio" value="1" /><span>☆</span>
+        </div>
+        <!-- <tt>rating = {{rating | json}}</tt><br/> -->
       </form>
     <button ng-click="clickAddInfo()">Save</button>
   </div>
