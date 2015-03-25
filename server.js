@@ -76,5 +76,6 @@ app.get('/api/auth', AuthCtrl.profile);
 
 app.get('/api/getBusiness', BusinessCtrl.get);
 app.post('/api/postBusiness', BusinessCtrl.post);
+app.put('/api/putBusiness', BusinessCtrl.put);
 
 app.listen(8000);

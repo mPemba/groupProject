@@ -42,8 +42,7 @@
     <div ng-model="newObjVar.vicinity"></div>
     <div name="businessLocation" ng-modal="newObjVar.vicinity"></div>
     <h4>How was Your Eating Experince...?</h4>
-      <input type="text" ng-model="comment"/><br>
-    <h4>Rate Your Experince</h4>
+      <input type="text" ng-model="newComment" placeholder="{{comment}}"/><br>
       <form name="myForm">
         <div class="rating">
           <input ng-model="rating" name="myrating" type="radio" value="5" /><span>☆</span>
@@ -54,8 +53,11 @@
         </div>
         <tt>rating = {{rating | json}}</tt><br/>
       </form>
-    <button ng-click="clickAddInfo()">Save</button>
+
+        <button ng-click="clickAddInfo(newComment, rating)">Save</button>
+        <button ng-click="updateUserInput(newComment, rating)">update</button>
   </div>
+  
         <div class="modal-container">
           <h3 class='modal-name'>{{newObjVar.name}}</h3>
           <p class='modal-rating'>Rating: {{newObjVar.rating}}</p>
@@ -63,9 +65,6 @@
           <p class='modal-open'>Open now: {{newObjVar.opening_hours.open_now}}</p>
           <!-- <p class='modal-hours'>{{newObjVar.opening_hours.weekday_text}}</p> -->
           <p class='modal-phone'>{{phoneNumber}}</p>
-
-
-
 
               <!-- <li ng-repeat="pictures in morePhotos">
                 <img ng-src="{{pictures.getUrl({'maxWidth': 500, 'maxHeight': 500})}}"/>

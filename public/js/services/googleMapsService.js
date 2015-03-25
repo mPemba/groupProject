@@ -88,7 +88,7 @@ app.service('mapsService', function($window, $q, $http){
    });﻿
 		return deferred.promise;	
 	}
-	// --------------  user input -------------------- 
+// --------------  user input -------------------- 
     this.postBusiness = function (user, comment, businessName, businessLocation, rating){
     	var dfd = $q.defer();
     	$http({
@@ -102,25 +102,42 @@ app.service('mapsService', function($window, $q, $http){
 			 	rating: rating
     		}
     	}).success(function(response){
-			console.log(response);	
             dfd.resolve(response);
         }).catch(function(err){
             dfd.reject(err);
         });
         return dfd.promise;
     };
+// -------------- show prior user comments and rating -----------------   
  	this.getPriorUserInfo = function(businessName, businessLocation, comment, rating){
 		var dfd = $q.defer();
 		$http({
 			method: 'GET',
 			url: '/api/getBusiness' + "?businessName=" + businessName + "&businessLocation=" + businessLocation
 		}).success(function(response){
-			//console.log(111111111111, response);
+			console.log(11111111, response)
             dfd.resolve(response);
         }).catch(function(err){
             	dfd.reject(err);
         		});
         	return dfd.promise;
     };
-
+// ---------------- update prior user comments and rating ------------------  
+    this.updateUserInfo = function(_id, comment, rating){
+    	var dfd = $q.defer();
+    	$http({
+    		method: 'PUT',
+    		url: '/api/putBusiness',
+    		data: {
+    			_id: _id,
+    			comment: comment,
+    			rating: rating
+    		}
+    	}).success(function(response){
+    		dfd.resolve(response)
+    	}).catch(function(err){
+    		dfd.reject(err)
+    	});
+    	return dfd.promise;	
+    };
 });

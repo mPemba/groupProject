@@ -26,10 +26,13 @@ api/register: example
 {
 	"userId": "54fd50c1ad90517437b95793",
 	"businessName": "cat in the hat",
-	"businessAddress": "Somewhere",
-	  "city": "someplace",
-	  "state": "sometime",
-	  "zip": "someday",
-	"rating": "5",
+	"businessLocation": "Somewhere",
+	"rating": 5,
 	"comments": "something to say"
+}
+localhost:8000/api/putBusiness
+{
+    "_id" : "5503032c6c94f736072d7bd4",
+    "comment" : "this is a test",
+    "rating" : 3
 }
