@@ -14,7 +14,6 @@ app.controller('homeCtrl', function($scope, $rootScope, mapsService) {
 		mapsService.changeMarkerPosition(arg);		
 	
 	}
-	$scope.test = "home page test test";
 	// $scope.getPlaces = function() {
 	// 	mapsService.getPlaces().then(function(res) {
 	// 		console.log(res);
@@ -75,35 +74,47 @@ app.controller('homeCtrl', function($scope, $rootScope, mapsService) {
 		$scope.newObjVar = $scope.newDataArr[counter];
 		counter = counter + 1;
 		newLocation($scope.newDataArr[counter - 1].geometry.location);
-	}
+		}
 	};
 
 	// ------------ user input ------------------
-$scope.clickAddInfo = function(){
- 	//console.log($rootScope.user)
+$scope.clickAddInfo = function(newComment, rating){
 	mapsService.postBusiness(
 		$rootScope.user,
-		$scope.comment,
+		newComment,
 		$scope.newObjVar.name,
 		$scope.newObjVar.vicinity,
-		$scope.rating
+		rating
 	)
 	$scope.comment = '';
 	$scope.rating = {
         value: '1'
       };
-
-};		
+};
+  // -------------- show prior user comments and rating ----------------- 
 	var loadPriorUserInput = function(){
 		mapsService.getPriorUserInfo(
 			$scope.newObjVar.name,
-			$scope.newObjVar.vicinity,
-			$scope.priorComment,
-			$scope.priorRating
+			$scope.newObjVar.vicinity
 		).then(function(res){
-			//console.log(2222222222, res)
+			$scope._id = res._id;
 			$scope.comment = res.comment;
 			$scope.rating = res.rating;
 		})
+	}
+// ---------------- update prior user comments and rating ------------------  	
+$scope.updateUserInput = function(aComment, rating){
+		mapsService.updateUserInfo(
+			$scope._id,
+			aComment,
+			rating
+			)
+		// .then(function(res){
+	// 		$scope.newComment = '';
+	// 		comment = '';
+	// 		aComment = '';
+	// 		$scope.comment = '';
+	// 		$scope.rating = '';
+	//         loadPriorUserInput()
 	}
 });
