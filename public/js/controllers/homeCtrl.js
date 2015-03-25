@@ -5,14 +5,14 @@ app.controller('homeCtrl', function($scope, $rootScope, mapsService) {
 	$scope.modalShown = false;
     $scope.toggleModal = function() {
     	newLocation($scope.newDataArr[counter - 1].geometry.location);
-    	
+
     	$scope.getAllMapDetails();
     $scope.modalShown = !$scope.modalShown;
     loadPriorUserInput();
   };
-  var newLocation = function(arg){		
-		mapsService.changeMarkerPosition(arg);		
-	
+  var newLocation = function(arg){
+		mapsService.changeMarkerPosition(arg);
+
 	}
 	// $scope.getPlaces = function() {
 	// 	mapsService.getPlaces().then(function(res) {
@@ -60,7 +60,7 @@ app.controller('homeCtrl', function($scope, $rootScope, mapsService) {
 		  //     		$scope.morePhotos[0]
 		  //   );
 		  //   	 console.log($scope.slides);
-		    	
+
 		  // };
   // for (var i=0; i<4; i++) {
   //   $scope.addSlide();
@@ -74,6 +74,13 @@ app.controller('homeCtrl', function($scope, $rootScope, mapsService) {
 		$scope.newObjVar = $scope.newDataArr[counter];
 		counter = counter + 1;
 		newLocation($scope.newDataArr[counter - 1].geometry.location);
+		}
+	};
+
+	$scope.refresh = function(){
+		if(counter > 0){
+			counter = 0;
+			$scope.newObjVar = $scope.newDataArr[counter];
 		}
 	};
 
@@ -91,7 +98,7 @@ $scope.clickAddInfo = function(newComment, rating){
         value: '1'
       };
 };
-  // -------------- show prior user comments and rating ----------------- 
+  // -------------- show prior user comments and rating -----------------
 	var loadPriorUserInput = function(){
 		mapsService.getPriorUserInfo(
 			$scope.newObjVar.name,
@@ -102,7 +109,7 @@ $scope.clickAddInfo = function(newComment, rating){
 			$scope.rating = res.rating;
 		})
 	}
-// ---------------- update prior user comments and rating ------------------  	
+// ---------------- update prior user comments and rating ------------------
 $scope.updateUserInput = function(aComment, rating){
 		mapsService.updateUserInfo(
 			$scope._id,

@@ -18,6 +18,7 @@
         <h3>No Image Available</h3>
     </div>
     </div>
+    <div ng-click='refresh()' class='refresh'><img src='https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/refresh-24.png'/></div>
     <div>
       <p class='res-rating'> Average user rating: {{newObjVar.rating}} </p>
       <!-- <img ng-click='nextPlace()' src='https://cdn0.iconfinder.com/data/icons/super-mono-reflection/red/button-cross_red.png' class='x'/> -->
@@ -57,7 +58,7 @@
         <button ng-click="clickAddInfo(newComment, rating)">Save</button>
         <button ng-click="updateUserInput(newComment, rating)">update</button>
   </div>
-  
+
         <div class="modal-container">
           <h3 class='modal-name'>{{newObjVar.name}}</h3>
           <p class='modal-rating'>Rating: {{newObjVar.rating}}</p>
