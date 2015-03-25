@@ -101,6 +101,21 @@ body {
 
 }
 
+.refresh{
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  background: white;
+  position: absolute;
+  left: 900px;
+  top: 250px;
+}
+
+.refresh img{
+  margin-top: 13px;
+  margin-left: 12px;
+}
+
 .res-rating{
   text-align: center;
   margin: 0 auto;
@@ -147,6 +162,7 @@ body {
   margin-top: 13px;
   margin-left: 13px;
 }
+
 
 
 
@@ -283,3 +299,24 @@ body {
   margin-left: auto;
   bottom:0px;
 }
+
+
+@media screen and (max-width: 550px){
+  .main-result-headline {
+    font-size: 30px;
+    margin-top: 12px;
+  }
+}
+
+@media screen and (max-height: 980px){
+  .main-result-headline {
+
+  }
+}
+
+@media screen and (max-width: 700px) and (min-width: 551px){
+  .main-result-headline {
+    font-size: 40px;
+    margin-top: 5px;
+  }
+};
