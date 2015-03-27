@@ -76,7 +76,7 @@ body {
 .main-result-headline {
   color: hsl(3, 45%, 56%);
   font-size: 50px;
-  font-family: 'Didot', sans-serif;
+  font-family: 'Old Standard TT', serif;
   text-align: center;
 }
 
@@ -166,11 +166,6 @@ body {
 
 
 
-.user-input-container {
-  text-align: center;
-}
-
-
 /*modal*/
 
 .ng-modal-overlay {
@@ -232,6 +227,10 @@ body {
 .ng-modal-dialog-content {
   color: black;
   padding:5px;
+  text-align: center;
+}
+
+.user-input-container {
   text-align: center;
 }
 
