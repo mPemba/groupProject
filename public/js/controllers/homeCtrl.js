@@ -81,6 +81,7 @@ app.controller('homeCtrl', function($scope, $rootScope, mapsService) {
 		if(counter > 0){
 			counter = 0;
 			$scope.newObjVar = $scope.newDataArr[counter];
+			newLocation($scope.newDataArr[counter].geometry.location);
 		}
 	};
 
