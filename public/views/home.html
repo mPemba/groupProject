@@ -12,10 +12,10 @@
     </div>
 
     <div class='obj-pic'>
-      <h3 ng-if="!newObjVar">Loading</h3>
+      <!-- <h3 ng-if="!newObjVar">Loading</h3> -->
       <img ng-if="newObjVar.photos[0]" class="main-pic" ng-src="{{newObjVar.photos[0].getUrl({'maxWidth': 500, 'maxHeight': 500})}}"/>
       <div ng-if="!newObjVar.photos[0]">
-        <h3>No Image Available</h3>
+        <img src='http://media.rvanews.com/wp-content/uploads/2012/04/restaurant-week-no-image.jpg'/>
     </div>
     </div>
     <div ng-click='refresh()' class='refresh'><img src='https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/refresh-24.png'/></div>
